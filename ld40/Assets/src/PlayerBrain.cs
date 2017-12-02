@@ -32,6 +32,37 @@ public class PlayerBrain : MonoBehaviour
         body = GetComponent<Rigidbody>();
     }
 
+	void Update()
+	{
+		if (Input.GetButtonUp("Fire1"))
+		{
+			if(lookDir == LookDirection.Background)
+			{
+				if (proxHaunts[1] != null && !proxHaunts[1].PreviouslyInteracted)
+				{
+					// TODO: Animation based on IsPossessed state BEFORE change
+					if (proxHaunts[1].IsPossessed)
+					{
+						proxHaunts[1].IsPossessed = false;
+						Debug.Log("Ghost eliminated");
+					}
+				}
+			}
+			else if (lookDir == LookDirection.Foreground)
+			{
+				if (proxHaunts[0] != null && !proxHaunts[0].PreviouslyInteracted)
+				{
+					// TODO: Animation based on IsPossessed state BEFORE change
+					if (proxHaunts[0].IsPossessed)
+					{
+						proxHaunts[0].IsPossessed = false;
+						Debug.Log("Ghost eliminated");
+					}
+				}
+			}
+		}
+	}
+
     void FixedUpdate()
     {
         float vmov = Input.GetAxis("Vertical");

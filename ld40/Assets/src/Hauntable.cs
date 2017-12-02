@@ -6,6 +6,7 @@ using UnityEngine;
 public class Hauntable : MonoBehaviour
 {
 	public bool IsPossessed;
+	public bool PreviouslyInteracted;
 
 	private bool animating;
 	private float dumbAnimTimer;
@@ -14,6 +15,7 @@ public class Hauntable : MonoBehaviour
 	{
 		IsPossessed = false;
         animating = false;
+        PreviouslyInteracted = false;
 
 		GameDirector.Instance.RegisterHauntable(this);
 		GameDirector.Instance.HintEvent += new Action(OnHint);
