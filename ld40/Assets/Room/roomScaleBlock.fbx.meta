@@ -10,8 +10,11 @@ ModelImporter:
     400000: KitchenMerge
     400002: //RootNode
     2300000: KitchenMerge
+    2300002: //RootNode
     3300000: KitchenMerge
+    3300002: //RootNode
     4300000: KitchenMerge
+    4300002: roomScale
     9500000: //RootNode
   externalObjects:
   - first:
