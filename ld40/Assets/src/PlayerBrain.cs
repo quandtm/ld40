@@ -14,36 +14,26 @@ enum LookDirection
 public class PlayerBrain : MonoBehaviour
 {
     public float Speed = 1f;
-	public float HorizontalDeadzone = 0.3f;
-	public float VerticalThreshold = 0.8f;
-	public float HeightOffset = 1f;
-	public float LeftYRotation = 0f;
+    public float HorizontalDeadzone = 0.3f;
+    public float VerticalThreshold = 0.8f;
+    public float HeightOffset = 1f;
+    public float LeftYRotation = 0f;
 
-	private Rigidbody body;
-	private float baseHeight = 0f;
-	private LookDirection lookDir = LookDirection.Left;
+    private Rigidbody body;
+    private float baseHeight = 0f;
+    private LookDirection lookDir = LookDirection.Left;
 
-	private StairZone stairZone;
-	private bool vMovHandled = false;
+    private StairZone stairZone;
+    private bool vMovHandled = false;
+    private Hauntable[] proxHaunts = new Hauntable[2]; // 0=fore, 1=back
 
-	void Start()
-	{
-		body = GetComponent<Rigidbody>();
+    void Start()
+    {
+        body = GetComponent<Rigidbody>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        bool moved = false;
-
-        float hmov = Input.GetAxis("Horizontal");
-        float moveDist = 0f;
-        if (Mathf.Abs(hmov) > HorizontalDeadzone)
-        {
-            moveDist = hmov * Time.deltaTime * Speed;
-			lookDir = moveDist > 0f ? LookDirection.Right : LookDirection.Left;
-            moved = true;
-        }
-
         float vmov = Input.GetAxis("Vertical");
         bool vmovJustPressed = false;
         if (Mathf.Abs(vmov) > VerticalThreshold)
@@ -57,6 +47,18 @@ public class PlayerBrain : MonoBehaviour
         else
         {
             vMovHandled = false;
+
+            float hmov = Input.GetAxis("Horizontal");
+            float moveDist = 0f;
+            if (Mathf.Abs(hmov) > HorizontalDeadzone)
+            {
+                moveDist = hmov * Time.deltaTime * Speed;
+                lookDir = moveDist > 0f ? LookDirection.Right : LookDirection.Left;
+                float newVelocity = Speed * (moveDist > 0f ? 1f : -1f);
+                body.velocity = new Vector3(newVelocity, 0f, 0f);
+                var rot = Quaternion.Euler(0f, LeftYRotation + (float)lookDir, 0f);
+                body.rotation = rot;
+            }
         }
 
         if (vmovJustPressed)
@@ -67,37 +69,76 @@ public class PlayerBrain : MonoBehaviour
                     baseHeight = stairZone.GetUpZoneHeight();
                 else
                     baseHeight = stairZone.GetDownZoneHeight();
-                moved = true;
+
+                body.velocity = Vector3.zero;
+                var p = transform.position;
+                p.y = baseHeight + HeightOffset;
+                transform.position = p;
             }
             else
             {
-                lookDir = vmov > 0f ? LookDirection.Background : LookDirection.Foreground;
-				moved = true;
-            }
-        }
+                if (vmov > 0f)
+                {
+                    if (proxHaunts[1] != null)
+                        lookDir = LookDirection.Background;
+                }
+                else
+                {
+                    if (proxHaunts[0] != null)
+                        lookDir = LookDirection.Foreground;
+                }
 
-        if (moved)
-        {
-            var pos = body.position;
-            pos.x += moveDist;
-            pos.y = baseHeight + HeightOffset;
-            var rot = Quaternion.Euler(0f, LeftYRotation + (float)lookDir, 0f);
-			body.MoveRotation(rot);
-            body.MovePosition(pos);
+                var rot = Quaternion.Euler(0f, LeftYRotation + (float)lookDir, 0f);
+                body.rotation = rot;
+            }
         }
     }
 
-	void OnTriggerEnter(Collider other)
-	{
-		var zone = other.GetComponent<StairZone>();
-		if (zone != null)
-			stairZone = zone;
-	}
+    void OnTriggerEnter(Collider other)
+    {
+        var zone = other.GetComponent<StairZone>();
+        if (zone != null)
+            stairZone = zone;
+        else
+        {
+            var haunt = other.GetComponent<Hauntable>();
+            if (haunt != null)
+            {
+                if (haunt.transform.position.z < transform.position.z)
+                {
+                    // Foreground
+                    proxHaunts[0] = haunt;
+                }
+                else
+                {
+                    // Background
+                    proxHaunts[1] = haunt;
+                }
+            }
+        }
+    }
 
-	void OnTriggerExit(Collider other)
-	{
-		var zone = other.GetComponent<StairZone>();
-		if (zone != null)
-			stairZone = null;
-	}
+    void OnTriggerExit(Collider other)
+    {
+        var zone = other.GetComponent<StairZone>();
+        if (zone != null)
+            stairZone = null;
+        else
+        {
+            var haunt = other.GetComponent<Hauntable>();
+            if (haunt != null)
+            {
+                if (haunt.transform.position.z < transform.position.z)
+                {
+                    // Foreground
+                    proxHaunts[0] = null;
+                }
+                else
+                {
+                    // Background
+                    proxHaunts[1] = null;
+                }
+            }
+        }
+    }
 }
