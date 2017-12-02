@@ -15,7 +15,7 @@ public class GameDirector : MonoBehaviour
 {
     public static GameDirector Instance { get; private set; }
 
-    public Phase CurrentPhase { get; private set; }
+    public Phase CurrentPhase;
 
     private List<Hauntable> haunts = new List<Hauntable>();
 
