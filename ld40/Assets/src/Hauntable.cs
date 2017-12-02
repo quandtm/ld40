@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 
 [RequireComponent(typeof(Animator))]
 public class Hauntable : MonoBehaviour
@@ -29,5 +30,5 @@ public class Hauntable : MonoBehaviour
 	{
 		if (IsPossessed)
 			anim.SetTrigger(shakeAnimHash);
-	}
+    }
 }
