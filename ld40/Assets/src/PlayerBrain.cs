@@ -19,7 +19,6 @@ public class PlayerBrain : MonoBehaviour
 	public float HeightOffset = 1f;
 	public float LeftYRotation = 0f;
 
-	private Rewired.Player player;
 	private Rigidbody body;
 	private float baseHeight = 0f;
 	private LookDirection lookDir = LookDirection.Left;
@@ -29,7 +28,6 @@ public class PlayerBrain : MonoBehaviour
 
 	void Start()
 	{
-		player = Rewired.ReInput.players.GetPlayer("MainPlayer");
 		body = GetComponent<Rigidbody>();
     }
 
@@ -37,7 +35,7 @@ public class PlayerBrain : MonoBehaviour
     {
         bool moved = false;
 
-        float hmov = player.GetAxis(0);
+        float hmov = Input.GetAxis("Horizontal");
         float moveDist = 0f;
         if (Mathf.Abs(hmov) > HorizontalDeadzone)
         {
@@ -46,7 +44,7 @@ public class PlayerBrain : MonoBehaviour
             moved = true;
         }
 
-        float vmov = player.GetAxis(1);
+        float vmov = Input.GetAxis("Vertical");
         bool vmovJustPressed = false;
         if (Mathf.Abs(vmov) > VerticalThreshold)
         {
