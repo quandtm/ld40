@@ -18,8 +18,8 @@ RenderSettings:
   m_FogColor: {r: 0, g: 0, b: 0, a: 1}
   m_FogMode: 1
   m_FogDensity: 0.01
-  m_LinearFogStart: 6
-  m_LinearFogEnd: 7
+  m_LinearFogStart: 7.5
+  m_LinearFogEnd: 7.71
   m_AmbientSkyColor: {r: 0, g: 0, b: 0, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
@@ -263,7 +263,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.1
-  far clip plane: 7
+  far clip plane: 7.7
   field of view: 60
   orthographic: 0
   orthographic size: 10
@@ -334,6 +334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82c813eab7aa0fd43b7442f57dcf5748, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CurrentPhase: 0
   TotalHaunts: 1
 --- !u!1 &968995886
 GameObject:
@@ -644,7 +645,7 @@ MonoBehaviour:
     FieldOfView: 60
     OrthographicSize: 10
     NearClipPlane: 0.1
-    FarClipPlane: 7
+    FarClipPlane: 7.7
     Dutch: 0
   m_ComponentOwner: {fileID: 1167422719}
 --- !u!4 &1879680419

@@ -1346,6 +1346,7 @@ GameObject:
   - component: {fileID: 709964382}
   - component: {fileID: 709964381}
   - component: {fileID: 709964385}
+  - component: {fileID: 709964386}
   m_Layer: 0
   m_Name: Haunt1
   m_TagString: Untagged
@@ -1432,6 +1433,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsPossessed: 0
   PreviouslyInteracted: 0
+--- !u!95 &709964386
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 709964380}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 867a55b5fee1a1543bea6a3bb06790e2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &716965965
 GameObject:
   m_ObjectHideFlags: 0
@@ -4288,6 +4306,7 @@ GameObject:
   - component: {fileID: 1863846964}
   - component: {fileID: 1863846963}
   - component: {fileID: 1863846962}
+  - component: {fileID: 1863846967}
   m_Layer: 0
   m_Name: Haunt2
   m_TagString: Untagged
@@ -4374,6 +4393,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!95 &1863846967
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1863846961}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 867a55b5fee1a1543bea6a3bb06790e2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!4 &1951470148
 Transform:
   m_ObjectHideFlags: 0
