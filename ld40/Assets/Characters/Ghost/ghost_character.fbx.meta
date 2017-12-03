@@ -166,6 +166,10 @@ ModelImporter:
     100316: Ghost_Eyes
     100318: Ghost_shirt
     100320: GhostClean
+    100322: eye.l
+    100324: ScaleMan_Inst1
+    100326: ScaleMan_Inst1_char
+    100328: ScaleMan_Inst1_shirt
     400000: Character1_Ctrl_ChestEndEffector
     400002: Character1_Ctrl_ChestOriginEffector
     400004: Character1_Ctrl_Head
@@ -327,17 +331,30 @@ ModelImporter:
     400316: Ghost_Eyes
     400318: Ghost_shirt
     400320: GhostClean
+    400322: eye.l
+    400324: ScaleMan_Inst1
+    400326: ScaleMan_Inst1_char
+    400328: ScaleMan_Inst1_shirt
     2100000: BaseMatt
+    2100002: EyeMatt
+    2100004: HoodMatt_Base
+    2100006: HoodMatt_Dark
     4300000: eye.l1
     4300002: eye.l2
     4300004: Ghost_shirt
     4300006: Ghost_body
+    4300008: eye.l
+    4300010: ScaleMan_Inst1_char
+    4300012: ScaleMan_Inst1_shirt
     7400000: Take 001
     9500000: //RootNode
     13700000: eye.l1
     13700002: eye.l2
     13700004: Ghost_body
     13700006: Ghost_shirt
+    13700008: eye.l
+    13700010: ScaleMan_Inst1_char
+    13700012: ScaleMan_Inst1_shirt
   externalObjects:
   - first:
       type: UnityEngine:Material
