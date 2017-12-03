@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.1273174, g: 0.13414761, b: 0.12107885, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -293,7 +293,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BootstrapConfig: {fileID: 11400000, guid: 432252576f8f9fa488d6e11b0a3fa1c5, type: 2}
   GhostSpawnLocation: {fileID: 939291831}
-  GhostPrefab: {fileID: 1907152605632898, guid: 21889e9a257821842bf95f45c148107f,
+  GhostPrefab: {fileID: 1360603707846512, guid: 2edcc3f0b4b0aff41b2190e21b0e7017,
     type: 2}
 --- !u!1 &968995886
 GameObject:

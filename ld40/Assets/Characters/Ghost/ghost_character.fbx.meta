@@ -327,6 +327,7 @@ ModelImporter:
     400316: Ghost_Eyes
     400318: Ghost_shirt
     400320: GhostClean
+    2100000: BaseMatt
     4300000: eye.l1
     4300002: eye.l2
     4300004: Ghost_shirt
@@ -337,17 +338,12 @@ ModelImporter:
     13700002: eye.l2
     13700004: Ghost_body
     13700006: Ghost_shirt
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: BaseMatt
-    second: {fileID: 2100000, guid: 3850e81f356279244b9bd1f97015eb2a, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -369,16 +365,16 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 1
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
-    importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importBlendShapes: 0
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
