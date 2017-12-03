@@ -319,8 +319,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrentPhase: 0
   TotalHaunts: 1
-  TimeLimitSec: 60
-  SecondsBetweenHints: 10
+  TimeLimitSec: 30
+  SecondsBetweenHints: 5
+  LastChanceHint: 10
   RemainingHaunts: 0
   SecondsRemaining: 0
 --- !u!1 &968995886

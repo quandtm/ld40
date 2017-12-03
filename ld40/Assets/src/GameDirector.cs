@@ -22,12 +22,14 @@ public class GameDirector : MonoBehaviour
     public int TotalHaunts = 1;
     public float TimeLimitSec = 60f;
     public float SecondsBetweenHints = 10f;
+    public float LastChanceHint = 10f;
 
     public int RemainingHaunts;
     public float SecondsRemaining;
 
     private List<Hauntable> haunts = new List<Hauntable>();
     private float sinceLastHint;
+    private bool hintsEnabled;
 
     void Start()
     {
@@ -88,14 +90,23 @@ public class GameDirector : MonoBehaviour
             // Loss (or is it?)
             CurrentPhase = Phase.Buy;
         }
-        else
+        else if (hintsEnabled)
         {
-            sinceLastHint += Time.deltaTime;
-            if (sinceLastHint >= SecondsBetweenHints)
+            if (SecondsRemaining <= LastChanceHint)
             {
                 if (HintEvent != null)
                     HintEvent();
-                sinceLastHint = 0;
+                hintsEnabled = false; // No more hints allowed after the last chance hint
+            }
+            else
+            {
+                sinceLastHint += Time.deltaTime;
+                if (sinceLastHint >= SecondsBetweenHints)
+                {
+                    if (HintEvent != null)
+                        HintEvent();
+                    sinceLastHint = 0;
+                }
             }
         }
     }
@@ -106,6 +117,7 @@ public class GameDirector : MonoBehaviour
         CurrentPhase = Phase.Haunt;
         SecondsRemaining = TimeLimitSec;
         sinceLastHint = 0f;
+        hintsEnabled = true;
 
         int toRemove = haunts.Count - TotalHaunts;
         if (toRemove > 0)
