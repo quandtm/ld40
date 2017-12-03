@@ -67,6 +67,8 @@ public class Hauntable : MonoBehaviour
 				var xform = go.transform;
 				xform.parent = gameObject.transform;
 				xform.localPosition = boxCenter;
+				var brain = go.GetComponent<BuyerBrain>();
+				brain.WasStillPossessed = isPossessed;
 			}
 			else
 				Debug.LogError("Buyer prefab must be set on game director");

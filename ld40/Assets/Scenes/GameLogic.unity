@@ -295,7 +295,7 @@ MonoBehaviour:
   GhostSpawnLocation: {fileID: 939291831}
   GhostPrefab: {fileID: 1360603707846512, guid: 2edcc3f0b4b0aff41b2190e21b0e7017,
     type: 2}
-  BuyerPrefab: {fileID: 1360603707846512, guid: 2edcc3f0b4b0aff41b2190e21b0e7017,
+  BuyerPrefab: {fileID: 1360603707846512, guid: 481883cf640cb5f4dbee3eedc9857327,
     type: 2}
 --- !u!1 &968995886
 GameObject:

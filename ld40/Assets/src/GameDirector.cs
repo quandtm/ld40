@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Timers;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum Phase
 {
@@ -60,6 +61,8 @@ public class GameDirectorImpl
 
     private float hauntTimeRemaining;
 
+    private int numBuyAnimating = 0;
+
     private void BeginTransition()
     {
         transitionProgress = 0f;
@@ -103,6 +106,25 @@ public class GameDirectorImpl
                 CurrentPhase = Phase.PlayToBuy;
                 BeginTransition();
                 Debug.Log("Victory");
+            }
+        }
+    }
+
+    public void ReportBuying()
+    {
+        if (CurrentPhase == Phase.Buy)
+            numBuyAnimating++;
+    }
+
+    public void ReportBuyingDone()
+    {
+        if (CurrentPhase == Phase.Buy)
+        {
+            numBuyAnimating--;
+            if (numBuyAnimating <= 0)
+            {
+                SceneManager.LoadScene("ResultsScreen", LoadSceneMode.Single);
+                // TODO: Configure results
             }
         }
     }
