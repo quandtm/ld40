@@ -23,6 +23,8 @@ public class GameDirector : MonoBehaviour
 
     public int TotalHaunts = 1;
 
+    public int RemainingHaunts;
+
     void Start()
     {
         if (Instance == null)
@@ -38,6 +40,10 @@ public class GameDirector : MonoBehaviour
             case Phase.PreHaunt:
                 BeginHaunt();
                 break;
+
+            case Phase.Haunt:
+                CheckGameConditions();
+                break;
         }
     }
 
@@ -51,8 +57,19 @@ public class GameDirector : MonoBehaviour
         haunts.Add(haunt);
     }
 
+    private void CheckGameConditions()
+    {
+        int numRemaining = 0;
+        foreach (var haunt in haunts)
+        {
+            if (haunt.IsPossessed)
+                numRemaining++;
+        }
+    }
+
     private void BeginHaunt()
     {
+        RemainingHaunts = TotalHaunts;
         CurrentPhase = Phase.Haunt;
 
         int toRemove = haunts.Count - TotalHaunts;
