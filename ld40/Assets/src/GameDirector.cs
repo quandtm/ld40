@@ -19,6 +19,7 @@ public class GameDirectorImpl
     private const float HauntDuration = 3f;
     private const float TransitionDuration = 1f;
 
+    public GameObject BuyerPrefab;
     public GameObject GhostPrefab;
     public Vector3 GhostSpawnLocation;
 
@@ -85,6 +86,27 @@ public class GameDirectorImpl
         haunts.Add(haunt);
     }
 
+    public void ReportGhostEliminated()
+    {
+        if (CurrentPhase == Phase.Play)
+        {
+            int numRemaining = 0;
+            foreach (var haunt in haunts)
+            {
+                if (haunt.IsPossessed)
+                    numRemaining++;
+            }
+            RemainingHaunts = numRemaining;
+
+            if (numRemaining == 0)
+            {
+                CurrentPhase = Phase.PlayToBuy;
+                BeginTransition();
+                Debug.Log("Victory");
+            }
+        }
+    }
+
     public void Update()
     {
         if (IsTransitioning)
@@ -129,24 +151,9 @@ public class GameDirectorImpl
 
     private void CheckGameConditions()
     {
-        int numRemaining = 0;
-        foreach (var haunt in haunts)
-        {
-            if (haunt.IsPossessed)
-                numRemaining++;
-        }
-        RemainingHaunts = numRemaining;
-
         SecondsRemaining -= Time.deltaTime;
 
-        if (RemainingHaunts == 0)
-        {
-            // Victory
-            CurrentPhase = Phase.PlayToBuy;
-            BeginTransition();
-            Debug.Log("Victory");
-        }
-        else if (SecondsRemaining <= 0f)
+        if (SecondsRemaining <= 0f)
         {
             // Loss (or is it?)
             CurrentPhase = Phase.PlayToBuy;
@@ -230,6 +237,7 @@ public class GameDirector : MonoBehaviour
     public GameConfig BootstrapConfig;
     public Transform GhostSpawnLocation;
     public GameObject GhostPrefab; 
+    public GameObject BuyerPrefab;
 
     private static GameDirectorImpl inst;
     public static GameDirectorImpl Instance
@@ -252,6 +260,7 @@ public class GameDirector : MonoBehaviour
 
         inst.GhostSpawnLocation = GhostSpawnLocation.position;
         inst.GhostPrefab = GhostPrefab;
+        inst.BuyerPrefab = BuyerPrefab;
     }
 
     void Update()

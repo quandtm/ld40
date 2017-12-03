@@ -29,6 +29,7 @@ public class PlayerBrain : MonoBehaviour
     private Hauntable[] proxHaunts = new Hauntable[2]; // 0=fore, 1=back
 
     public PlayerMeshAnim childMesh;
+    private Hauntable curExorcising = null;
 
     void Start()
     {
@@ -49,6 +50,13 @@ public class PlayerBrain : MonoBehaviour
         {
             if (!childMesh.IsInAnim)
             {
+                if (curExorcising != null)
+                {
+                    curExorcising.PreviouslyInteracted = true;
+                    curExorcising.IsPossessed = false;
+                    curExorcising = null;
+                    Debug.Log("Ghost eliminated");
+                }
                 if (Input.GetButtonUp("Fire1"))
                 {
                     bool shouldAnim = false;
@@ -59,9 +67,7 @@ public class PlayerBrain : MonoBehaviour
                             // TODO: Animation based on IsPossessed state BEFORE change
                             if (proxHaunts[1].IsPossessed)
                             {
-                                proxHaunts[1].IsPossessed = false;
-                                proxHaunts[1].PreviouslyInteracted = true;
-                                Debug.Log("Ghost eliminated");
+                                curExorcising = proxHaunts[1];
                                 shouldAnim = true;
                             }
                         }
@@ -73,9 +79,7 @@ public class PlayerBrain : MonoBehaviour
                             // TODO: Animation based on IsPossessed state BEFORE change
                             if (proxHaunts[0].IsPossessed)
                             {
-                                proxHaunts[0].IsPossessed = false;
-                                proxHaunts[0].PreviouslyInteracted = true;
-                                Debug.Log("Ghost eliminated");
+                                curExorcising = proxHaunts[0];
                                 shouldAnim = true;
                             }
                         }

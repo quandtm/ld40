@@ -5,9 +5,23 @@ using UnityEngine;
 using UnityEngine.Playables;
 
 [RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(BoxCollider))]
 public class Hauntable : MonoBehaviour
 {
-	public bool IsPossessed;
+	private bool isPossessed;
+	public bool IsPossessed
+    {
+        get { return isPossessed; }
+        set
+        {
+            if (isPossessed != value)
+            {
+                isPossessed = value;
+                if (isPossessed == false)
+                    GameDirector.Instance.ReportGhostEliminated();
+            }
+        }
+    }
 	public bool PreviouslyInteracted;
 
 	private int shakeAnimHash;
@@ -17,7 +31,7 @@ public class Hauntable : MonoBehaviour
 	void Start()
 	{
         registered = false;
-		IsPossessed = false;
+		isPossessed = false;
         PreviouslyInteracted = false;
 
 		anim = GetComponent<Animator>();
@@ -27,6 +41,7 @@ public class Hauntable : MonoBehaviour
 	void Destroy()
 	{
 		GameDirector.Instance.HintEvent -= OnHint;
+		GameDirector.Instance.PhaseChangeEvent -= OnPhaseChange;
 	}
 
 	void Update()
@@ -35,7 +50,26 @@ public class Hauntable : MonoBehaviour
 		{
 			GameDirector.Instance.RegisterHauntable(this);
 			GameDirector.Instance.HintEvent += OnHint;
+			GameDirector.Instance.PhaseChangeEvent += OnPhaseChange;
 			registered = true;
+		}
+	}
+
+	private void OnPhaseChange()
+	{
+		if (GameDirector.Instance.CurrentPhase == Phase.Buy)
+		{
+			var boxCenter = GetComponent<BoxCollider>().center;
+			var prefab = GameDirector.Instance.BuyerPrefab;
+            if (prefab != null)
+			{
+				var go = GameObject.Instantiate(prefab, Vector3.zero, Quaternion.identity);
+				var xform = go.transform;
+				xform.parent = gameObject.transform;
+				xform.localPosition = boxCenter;
+			}
+			else
+				Debug.LogError("Buyer prefab must be set on game director");
 		}
 	}
 

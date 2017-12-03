@@ -295,6 +295,8 @@ MonoBehaviour:
   GhostSpawnLocation: {fileID: 939291831}
   GhostPrefab: {fileID: 1360603707846512, guid: 2edcc3f0b4b0aff41b2190e21b0e7017,
     type: 2}
+  BuyerPrefab: {fileID: 1360603707846512, guid: 2edcc3f0b4b0aff41b2190e21b0e7017,
+    type: 2}
 --- !u!1 &968995886
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,10 +325,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.25
-  m_Height: 2
+  m_Radius: 0.12
+  m_Height: 1.69
   m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0.02, y: 0.88, z: 0}
 --- !u!114 &968995888
 MonoBehaviour:
   m_ObjectHideFlags: 0
