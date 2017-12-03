@@ -23,9 +23,14 @@ public class PlayerMeshAnim : MonoBehaviour
 			anim.SetFloat(moveBlendHash, speed);
     }
 
+	public void StopWalking()
+	{
+		anim.SetFloat(moveBlendHash, 0f);
+	}
+
     public void PlayScare()
     {
-		SetSpeed(0f);
+		StopWalking();
 		anim.SetTrigger(scareAnimHash);
         IsInAnim = true;
     }
