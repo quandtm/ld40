@@ -8,15 +8,15 @@ public class BuyerBrain : MonoBehaviour
     public Animator ChildMesh;
     private bool hasAnimated = false;
 
-	private int happyAnim;
-	private int scaredAnim;
+	private int isScaredFlag;
+	private int beginTrigger;
 
 	private float tmpAnimTimer = 3f;
 
     void Start()
     {
-		happyAnim = Animator.StringToHash("DoHappy");
-		scaredAnim = Animator.StringToHash("DoScared");
+		isScaredFlag = Animator.StringToHash("IsScared");
+		beginTrigger = Animator.StringToHash("Begin");
 		if (ChildMesh == null)
 			Debug.LogError("Animator wasn't bound to BuyerBrain, check prefab!");
     }
@@ -26,10 +26,8 @@ public class BuyerBrain : MonoBehaviour
 		if (!hasAnimated)
 		{
             hasAnimated = true;
-			if (WasStillPossessed)
-				ChildMesh.SetTrigger(scaredAnim);
-			else
-				ChildMesh.SetTrigger(happyAnim);
+			ChildMesh.SetBool(isScaredFlag, WasStillPossessed);
+			ChildMesh.SetTrigger(beginTrigger);
             GameDirector.Instance.ReportBuying();
 		}
 		else
