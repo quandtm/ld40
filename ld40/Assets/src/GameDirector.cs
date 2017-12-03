@@ -1,18 +1,26 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Timers;
 using UnityEngine;
 
 public enum Phase
 {
     PreHaunt,
     Haunt,
+    HauntToPlay,
     Play,
+    PlayToBuy,
     Buy
 }
 
 public class GameDirectorImpl
 {
+    private const float HauntDuration = 3f;
+
+    public GameObject GhostPrefab;
+    public Vector3 GhostSpawnLocation;
+
     public event Action HintEvent;
     public event Action PhaseChangeEvent;
 
@@ -41,6 +49,8 @@ public class GameDirectorImpl
     private GameConfig config;
     public bool IsSetup { get { return config != null; } }
 
+    private float hauntTimeRemaining;
+
     public void Setup(GameConfig cfg)
     {
         if (config != null)
@@ -66,8 +76,18 @@ public class GameDirectorImpl
                 break;
 
             case Phase.Haunt:
+                hauntTimeRemaining -= Time.deltaTime;
+                if (hauntTimeRemaining <= 0f)
+                {
+                    CurrentPhase = Phase.HauntToPlay;
+                    if (HintEvent != null)
+                        HintEvent();
+                }
+                break;
+
+            case Phase.HauntToPlay:
                 CurrentPhase = Phase.Play;
-                Debug.Log("begin play");
+                Debug.Log("Begin play");
                 break;
 
             case Phase.Play:
@@ -150,19 +170,33 @@ public class GameDirectorImpl
         foreach (var h in haunts)
         {
             h.IsPossessed = true;
-            // TODO: Spawn ghosts and give them their object as a destination
+            Vector3 dest = h.gameObject.transform.position;
+            float yOff = UnityEngine.Random.Range(-2f, 2f);
+            float xOff = UnityEngine.Random.Range(-2f, 2f);
+            var spawnPos = GhostSpawnLocation;
+            spawnPos.x += xOff;
+            spawnPos.y += yOff;
+            GameObject ghost = GameObject.Instantiate(GhostPrefab, spawnPos, Quaternion.identity);
+            GhostSpawnBrain brain = ghost.GetComponent<GhostSpawnBrain>();
+            if (brain == null)
+            {
+                Debug.LogError("Invalid prefab, ghost needs brain!");
+                GameObject.Destroy(ghost);
+            }
+            brain.Destination = dest;
+            brain.Speed = (dest - spawnPos).magnitude / HauntDuration;
         }
 
         // TODO: Turn off lights for certain duration so ghosts can fly to objects, then kill ghosts and re-enable lights
-
-        if (HintEvent != null)
-            HintEvent();
+        hauntTimeRemaining = HauntDuration;
     }
 }
 
 public class GameDirector : MonoBehaviour
 {
     public GameConfig BootstrapConfig;
+    public Transform GhostSpawnLocation;
+    public GameObject GhostPrefab; 
 
     private static GameDirectorImpl inst;
     public static GameDirectorImpl Instance
@@ -182,6 +216,9 @@ public class GameDirector : MonoBehaviour
             Debug.Log("Using bootstrap");
             inst.Setup(BootstrapConfig);
         }
+
+        inst.GhostSpawnLocation = GhostSpawnLocation.position;
+        inst.GhostPrefab = GhostPrefab;
     }
 
     void Update()
