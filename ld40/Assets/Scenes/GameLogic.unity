@@ -328,7 +328,7 @@ MonoBehaviour:
   VerticalThreshold: 0.8
   HeightOffset: 0
   LeftYRotation: 0
-  mesh: {fileID: 1928273172}
+  childMesh: {fileID: 1928273175}
 --- !u!54 &968995892
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -550,3 +550,14 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &1928273175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1928273172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bea499a0f755a5441b0ef4ea33413f4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
