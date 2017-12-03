@@ -327,6 +327,11 @@ ModelImporter:
     400316: //RootNode
     400318: shirt
     400320: trousers_and_shoes
+    2100000: mat_trousers_and_shoes
+    2100002: Material.004
+    2100004: mat_skin
+    2100006: mat_shirt_and_tie
+    2100008: mat_hair
     4300000: trousers_and_shoes
     4300002: eye.l
     4300004: char
@@ -341,42 +346,17 @@ ModelImporter:
     13700006: eye.r
     13700008: shirt
     13700010: trousers_and_shoes
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.004
-    second: {fileID: 2100000, guid: 5a028f11b1092bf43914de895ed6dd94, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: mat_hair
-    second: {fileID: 2100000, guid: baca825d6da5859478b67cf997b5845d, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: mat_shirt_and_tie
-    second: {fileID: 2100000, guid: 604d331acc4fcde4f896b6442655d5d7, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: mat_skin
-    second: {fileID: 2100000, guid: aa1349babc7b5fe47971a0b652a9e86a, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: mat_trousers_and_shoes
-    second: {fileID: 2100000, guid: adaf42e8d73d4d941968012080b7520b, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
     resampleCurves: 1
-    optimizeGameObjects: 0
+    optimizeGameObjects: 1
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
@@ -400,7 +380,7 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
-    importBlendShapes: 1
+    importBlendShapes: 0
     importCameras: 0
     importLights: 0
     swapUVChannels: 0
