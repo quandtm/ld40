@@ -14,8 +14,22 @@ public enum Phase
 public class GameDirectorImpl
 {
     public event Action HintEvent;
+    public event Action PhaseChangeEvent;
 
-    public Phase CurrentPhase;
+    private Phase curPhase;
+    public Phase CurrentPhase
+    {
+        get { return curPhase; }
+        set
+        {
+            if (curPhase != value)
+            {
+                curPhase = value;
+                if (PhaseChangeEvent != null)
+                    PhaseChangeEvent();
+            }
+        }
+    }
 
     public int RemainingHaunts;
     public float SecondsRemaining;
