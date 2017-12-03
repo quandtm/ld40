@@ -11,7 +11,7 @@ public class GhostSpawnBrain : MonoBehaviour
         GameDirector.Instance.PhaseChangeEvent += OnPhaseChange;
     }
 
-    void Destroy()
+    void OnDestroy()
     {
         GameDirector.Instance.PhaseChangeEvent -= OnPhaseChange;
     }

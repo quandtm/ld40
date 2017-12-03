@@ -39,7 +39,7 @@ public class Hauntable : MonoBehaviour
 		shakeAnimHash = Animator.StringToHash("Shake");
 	}
 
-	void Destroy()
+	void OnDestroy()
 	{
 		GameDirector.Instance.HintEvent -= OnHint;
 		GameDirector.Instance.PhaseChangeEvent -= OnPhaseChange;

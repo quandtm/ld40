@@ -9,7 +9,7 @@ public class PhaseUIHider : MonoBehaviour
 		GameDirector.Instance.PhaseChangeEvent += OnPhaseChange;
 	}
 
-	void Destroy()
+	void OnDestroy()
 	{
 		GameDirector.Instance.PhaseChangeEvent -= OnPhaseChange;
 	}

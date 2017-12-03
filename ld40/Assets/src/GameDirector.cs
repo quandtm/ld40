@@ -305,8 +305,9 @@ public class GameDirector : MonoBehaviour
         Instance.Update();
     }
 
-    void Destroy()
+    void OnDestroy()
     {
+        Debug.Log("Destroying game director");
         inst = null;
     }
 }
