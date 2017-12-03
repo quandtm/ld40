@@ -1303,7 +1303,7 @@ GameObject:
   - component: {fileID: 679465163}
   - component: {fileID: 679465162}
   m_Layer: 0
-  m_Name: WorldEnd
+  m_Name: WorldCollider0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1977,7 +1977,7 @@ GameObject:
   - component: {fileID: 924453972}
   - component: {fileID: 924453971}
   m_Layer: 0
-  m_Name: WorldEnd (5)
+  m_Name: WorldCollider4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2006,7 +2006,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &928607346
 GameObject:
@@ -2373,7 +2373,7 @@ GameObject:
   - component: {fileID: 1049026194}
   - component: {fileID: 1049026193}
   m_Layer: 0
-  m_Name: WorldEnd (2)
+  m_Name: WorldCollider1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2402,7 +2402,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1080192354
 GameObject:
@@ -3883,7 +3883,7 @@ GameObject:
   - component: {fileID: 1548578076}
   - component: {fileID: 1548578075}
   m_Layer: 0
-  m_Name: WorldEnd (3)
+  m_Name: WorldCollider2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3912,7 +3912,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1562865031
 GameObject:
@@ -5063,7 +5063,7 @@ GameObject:
   - component: {fileID: 1925602021}
   - component: {fileID: 1925602020}
   m_Layer: 0
-  m_Name: WorldEnd (4)
+  m_Name: WorldCollider3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5092,7 +5092,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1925952248
 GameObject:
@@ -5125,7 +5125,7 @@ Transform:
   - {fileID: 2000255872}
   - {fileID: 1689213733}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1951470148
 Transform:

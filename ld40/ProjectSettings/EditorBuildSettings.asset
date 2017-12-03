@@ -17,3 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ResultsScreen.unity
     guid: e3541aa7d185f4d4aa5ecbd415ba03f0
+  - enabled: 1
+    path: Assets/Scenes/PlayUI.unity
+    guid: 676732c9c63b2c347862ba577f509bb7

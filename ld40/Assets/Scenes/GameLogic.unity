@@ -263,10 +263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82c813eab7aa0fd43b7442f57dcf5748, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BootstrapConfig: {fileID: 11400000, guid: b6d3bc44c1bc4844ca32b4eb9103814b, type: 2}
-  CurrentPhase: 0
-  RemainingHaunts: 0
-  SecondsRemaining: 0
+  BootstrapConfig: {fileID: 11400000, guid: 432252576f8f9fa488d6e11b0a3fa1c5, type: 2}
 --- !u!1 &968995886
 GameObject:
   m_ObjectHideFlags: 0
