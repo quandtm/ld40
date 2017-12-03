@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: dc0c04fc715b4734ba803bc55d1a0248
-timeCreated: 1512259166
+guid: 8ab1b8b239afbf442a5ca5a7f4d2864e
+timeCreated: 1512267536
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -356,7 +356,7 @@ ModelImporter:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
     resampleCurves: 1
-    optimizeGameObjects: 1
+    optimizeGameObjects: 0
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
@@ -373,7 +373,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 0
+    isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1
@@ -399,7 +399,7 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
