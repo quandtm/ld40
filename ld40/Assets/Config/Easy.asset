@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Easy
   m_EditorClassIdentifier: 
   NumGhosts: 4
-  TimeLimit: 60
+  TimeLimit: 70
   SecondsBetweenHints: 10
   LastChanceHintTime: 10
   EnableHints: 1

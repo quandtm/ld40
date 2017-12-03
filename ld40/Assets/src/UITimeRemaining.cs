@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class UITimeRemaining : MonoBehaviour
 {
     private Text txt;
-	private const string FormatStr = "{0}:{1}";
+	private const string FormatStr = "{0:00}:{1:00}";
 
     void Start()
     {
