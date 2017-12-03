@@ -17,12 +17,20 @@ public enum Phase
 public class GameDirectorImpl
 {
     private const float HauntDuration = 3f;
+    private const float TransitionDuration = 1f;
 
     public GameObject GhostPrefab;
     public Vector3 GhostSpawnLocation;
 
     public event Action HintEvent;
     public event Action PhaseChangeEvent;
+    private float transitionProgress = -1f;
+    public float TransitionProgress
+    {
+        get { return Mathf.Clamp01(transitionProgress); }
+    }
+    public bool IsTransitioning { get { return transitionProgress >= 0f; } }
+
 
     private Phase curPhase;
     public Phase CurrentPhase
@@ -51,6 +59,16 @@ public class GameDirectorImpl
 
     private float hauntTimeRemaining;
 
+    private void BeginTransition()
+    {
+        transitionProgress = 0f;
+    }
+
+    private void EndTransition()
+    {
+        transitionProgress = -1f;
+    }
+
     public void Setup(GameConfig cfg)
     {
         if (config != null)
@@ -69,6 +87,13 @@ public class GameDirectorImpl
 
     public void Update()
     {
+        if (IsTransitioning)
+        {
+            transitionProgress += Time.deltaTime / TransitionDuration;
+            if (transitionProgress > 1f)
+                EndTransition();
+        }
+
         switch (CurrentPhase)
         {
             case Phase.PreHaunt:
@@ -80,18 +105,24 @@ public class GameDirectorImpl
                 if (hauntTimeRemaining <= 0f)
                 {
                     CurrentPhase = Phase.HauntToPlay;
+                    BeginTransition();
                     if (HintEvent != null)
                         HintEvent();
                 }
                 break;
 
             case Phase.HauntToPlay:
-                CurrentPhase = Phase.Play;
-                Debug.Log("Begin play");
+                if (transitionProgress >= .5f)
+                    CurrentPhase = Phase.Play;
                 break;
 
             case Phase.Play:
                 CheckGameConditions();
+                break;
+
+            case Phase.PlayToBuy:
+                if (transitionProgress >= .5f)
+                    CurrentPhase = Phase.Buy;
                 break;
         }
     }
@@ -111,13 +142,15 @@ public class GameDirectorImpl
         if (RemainingHaunts == 0)
         {
             // Victory
-            CurrentPhase = Phase.Buy;
+            CurrentPhase = Phase.PlayToBuy;
+            BeginTransition();
             Debug.Log("Victory");
         }
         else if (SecondsRemaining <= 0f)
         {
             // Loss (or is it?)
-            CurrentPhase = Phase.Buy;
+            CurrentPhase = Phase.PlayToBuy;
+            BeginTransition();
             Debug.Log("Time out");
         }
         else if (hintsEnabled)
