@@ -30,11 +30,11 @@ public class GameDirector : MonoBehaviour
 
     void Start()
     {
-        if (Instance == null)
-            Instance = this;
-
         if (NextConfig == null)
             NextConfig = BootstrapConfig;
+
+        if (Instance == null)
+            Instance = this;
 
         CurrentPhase = Phase.PreHaunt;
     }

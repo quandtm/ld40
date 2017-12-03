@@ -1,0 +1,163 @@
+fileFormatVersion: 2
+guid: 4e98987ed24f5374ba147f10ac6485a5
+timeCreated: 1512269920
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Attic1
+    100002: Bathroom1
+    100004: Bedroom
+    100006: DiningRoom1
+    100008: EntryHall1
+    100010: Hall1
+    100012: Kitchen1
+    100014: Landing1
+    100016: Office1
+    100018: //RootNode
+    400000: Attic1
+    400002: Bathroom1
+    400004: Bedroom
+    400006: DiningRoom1
+    400008: EntryHall1
+    400010: Hall1
+    400012: Kitchen1
+    400014: Landing1
+    400016: Office1
+    400018: //RootNode
+    2300000: Attic1
+    2300002: Bathroom1
+    2300004: Bedroom
+    2300006: DiningRoom1
+    2300008: EntryHall1
+    2300010: Hall1
+    2300012: Kitchen1
+    2300014: Landing1
+    2300016: Office1
+    3300000: Attic1
+    3300002: Bathroom1
+    3300004: Bedroom
+    3300006: DiningRoom1
+    3300008: EntryHall1
+    3300010: Hall1
+    3300012: Kitchen1
+    3300014: Landing1
+    3300016: Office1
+    4300000: Attic1
+    4300002: Landing1
+    4300004: Bedroom
+    4300006: Bathroom1
+    4300008: Hall1
+    4300010: Office1
+    4300012: EntryHall1
+    4300014: DiningRoom1
+    4300016: Kitchen1
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CeilingMatt
+    second: {fileID: 2100000, guid: e3e060000785531459c7deddb90016b1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FloorMat
+    second: {fileID: 2100000, guid: 1ccb9bb5c3b4631438d2ccd6e58d3091, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: StairMatt
+    second: {fileID: 2100000, guid: a1eedf9c6165ea349a4b3b0b9bc74d9c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TrimMatt
+    second: {fileID: 2100000, guid: a352f8d5a25590c41993fc132ccf0fbe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WallMat
+    second: {fileID: 2100000, guid: 3deec94645d24684ebb4a2dfc142bd00, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 6093371429201e6418ff2149c169d09f, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

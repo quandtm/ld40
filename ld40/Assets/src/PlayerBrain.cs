@@ -27,9 +27,17 @@ public class PlayerBrain : MonoBehaviour
     private bool vMovHandled = false;
     private Hauntable[] proxHaunts = new Hauntable[2]; // 0=fore, 1=back
 
+    public GameObject mesh;
+    private Animator anim;
+    private int speedParamHash;
+    private int scareHash;
+
     void Start()
     {
         body = GetComponent<Rigidbody>();
+        anim = mesh.GetComponent<Animator>();
+        speedParamHash = Animator.StringToHash("MoveSpeed");
+        scareHash = Animator.StringToHash("DoScare");
     }
 
     void Update()
@@ -38,6 +46,7 @@ public class PlayerBrain : MonoBehaviour
         {
             if (Input.GetButtonUp("Fire1"))
             {
+                bool shouldAnim = false;
                 if (lookDir == LookDirection.Background)
                 {
                     if (proxHaunts[1] != null && !proxHaunts[1].PreviouslyInteracted)
@@ -46,7 +55,9 @@ public class PlayerBrain : MonoBehaviour
                         if (proxHaunts[1].IsPossessed)
                         {
                             proxHaunts[1].IsPossessed = false;
+                            proxHaunts[1].PreviouslyInteracted = true;
                             Debug.Log("Ghost eliminated");
+                            shouldAnim = true;
                         }
                     }
                 }
@@ -58,10 +69,21 @@ public class PlayerBrain : MonoBehaviour
                         if (proxHaunts[0].IsPossessed)
                         {
                             proxHaunts[0].IsPossessed = false;
+                            proxHaunts[0].PreviouslyInteracted = true;
                             Debug.Log("Ghost eliminated");
+                            shouldAnim = true;
                         }
                     }
                 }
+
+                if (shouldAnim)
+                    anim.SetTrigger(scareHash);
+            }
+            else
+            {
+                float speed = body.velocity.magnitude;
+                if (speed > 0f)
+                    anim.SetFloat(speedParamHash, speed > HorizontalDeadzone ? speed : 0f);
             }
         }
     }
@@ -85,13 +107,12 @@ public class PlayerBrain : MonoBehaviour
                 vMovHandled = false;
 
                 float hmov = Input.GetAxis("Horizontal");
-                float moveDist = 0f;
-                if (Mathf.Abs(hmov) > HorizontalDeadzone)
+                float absHmov = Mathf.Abs(hmov);
+                if (absHmov > HorizontalDeadzone)
                 {
-                    moveDist = hmov * Time.deltaTime * Speed;
+                    float moveDist = Mathf.Sign(hmov) * ((absHmov - .3f) / .7f) * Speed;
                     lookDir = moveDist > 0f ? LookDirection.Right : LookDirection.Left;
-                    float newVelocity = Speed * (moveDist > 0f ? 1f : -1f);
-                    body.velocity = new Vector3(newVelocity, 0f, 0f);
+                    body.velocity = new Vector3(moveDist, 0f, 0f);
                     var rot = Quaternion.Euler(0f, LeftYRotation + (float)lookDir, 0f);
                     body.rotation = rot;
                 }
