@@ -8,4 +8,5 @@ public class GameConfig : ScriptableObject
     public float SecondsBetweenHints;
     public float LastChanceHintTime;
     public bool EnableHints;
+    public int MinBuyersForWin;
 }

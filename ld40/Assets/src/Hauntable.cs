@@ -22,6 +22,7 @@ public class Hauntable : MonoBehaviour
             }
         }
     }
+	[HideInInspector]
 	public bool PreviouslyInteracted;
 
 	private int shakeAnimHash;

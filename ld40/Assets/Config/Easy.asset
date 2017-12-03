@@ -16,3 +16,4 @@ MonoBehaviour:
   SecondsBetweenHints: 10
   LastChanceHintTime: 10
   EnableHints: 1
+  MinBuyersForWin: 2

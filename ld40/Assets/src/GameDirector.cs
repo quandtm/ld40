@@ -12,7 +12,8 @@ public enum Phase
     HauntToPlay,
     Play,
     PlayToBuy,
-    Buy
+    Buy,
+    BuyToResults
 }
 
 public class GameDirectorImpl
@@ -123,8 +124,8 @@ public class GameDirectorImpl
             numBuyAnimating--;
             if (numBuyAnimating <= 0)
             {
-                SceneManager.LoadScene("ResultsScreen", LoadSceneMode.Single);
-                // TODO: Configure results
+                CurrentPhase = Phase.BuyToResults;
+                BeginTransition();
             }
         }
     }
@@ -168,6 +169,20 @@ public class GameDirectorImpl
                 if (transitionProgress >= .5f)
                     CurrentPhase = Phase.Buy;
                 break;
+
+            case Phase.BuyToResults:
+                if (transitionProgress >= .5f)
+                {
+                    var results = ResultsStore.Instance;
+                    results.BuyersRemaining = config.NumGhosts - RemainingHaunts;
+                    results.TimeRemaining = hauntTimeRemaining;
+                    results.MinBuyersForWin = config.MinBuyersForWin;
+
+                    SceneManager.LoadScene("ResultsScreen", LoadSceneMode.Single);
+                }
+                break;
+
+            default: break; // Buy isn't implemented in Update
         }
     }
 
