@@ -5,7 +5,7 @@ AnimatorController:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Haunt2
+  m_Name: HauntAC
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Shake
@@ -137,7 +137,7 @@ AnimatorStateMachine:
     m_Position: {x: 492, y: 216, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102582281522775200}
-    m_Position: {x: 336, y: 324, z: 0}
+    m_Position: {x: 228, y: 252, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
