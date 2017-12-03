@@ -131,23 +131,26 @@ public class PlayerBrain : MonoBehaviour
                     if (stairZone != null)
                     {
                         if (vmov > 0f)
+                        {
                             baseHeight = stairZone.GetUpZoneHeight();
+                            if (stairZone.HasUpZone)
+                            {
+                                lookDir = LookDirection.Foreground;
+                                transform.rotation = Quaternion.Euler(0f, LeftYRotation + (float)lookDir, 0f);
+                                childMesh.ClimbStairs();
+                            }
+                        }
                         else
+                        {
                             baseHeight = stairZone.GetDownZoneHeight();
-
+                            if (stairZone.HasDownZone)
+                            {
+                                lookDir = LookDirection.Foreground;
+                                transform.rotation = Quaternion.Euler(0f, LeftYRotation + (float)lookDir, 0f);
+                                childMesh.DescendStairs();
+                            }
+                        }
                         body.velocity = Vector3.zero;
-                        if (vmov > 0f)
-                        {
-                            lookDir = LookDirection.Foreground;
-                            transform.rotation = Quaternion.Euler(0f, LeftYRotation + (float)lookDir, 0f);
-                            childMesh.ClimbStairs();
-                        }
-                        else
-                        {
-                            lookDir = LookDirection.Foreground;
-                            transform.rotation = Quaternion.Euler(0f, LeftYRotation + (float)lookDir, 0f);
-                            childMesh.DescendStairs();
-                        }
                     }
                     else
                     {
