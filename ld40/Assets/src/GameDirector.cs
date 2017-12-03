@@ -15,15 +15,19 @@ public class GameDirector : MonoBehaviour
 {
     public static GameDirector Instance { get; private set; }
 
-    public Phase CurrentPhase;
-
-    private List<Hauntable> haunts = new List<Hauntable>();
-
     public event Action HintEvent;
 
+    public Phase CurrentPhase;
+
     public int TotalHaunts = 1;
+    public float TimeLimitSec = 60f;
+    public float SecondsBetweenHints = 10f;
 
     public int RemainingHaunts;
+    public float SecondsRemaining;
+
+    private List<Hauntable> haunts = new List<Hauntable>();
+    private float sinceLastHint;
 
     void Start()
     {
@@ -72,10 +76,27 @@ public class GameDirector : MonoBehaviour
         }
         RemainingHaunts = numRemaining;
 
+        SecondsRemaining -= Time.deltaTime;
+
         if (RemainingHaunts == 0)
         {
             // Victory
             CurrentPhase = Phase.Buy;
+        }
+        else if (SecondsRemaining <= 0f)
+        {
+            // Loss (or is it?)
+            CurrentPhase = Phase.Buy;
+        }
+        else
+        {
+            sinceLastHint += Time.deltaTime;
+            if (sinceLastHint >= SecondsBetweenHints)
+            {
+                if (HintEvent != null)
+                    HintEvent();
+                sinceLastHint = 0;
+            }
         }
     }
 
@@ -83,6 +104,8 @@ public class GameDirector : MonoBehaviour
     {
         RemainingHaunts = TotalHaunts;
         CurrentPhase = Phase.Haunt;
+        SecondsRemaining = TimeLimitSec;
+        sinceLastHint = 0f;
 
         int toRemove = haunts.Count - TotalHaunts;
         if (toRemove > 0)
@@ -102,7 +125,6 @@ public class GameDirector : MonoBehaviour
         }
 
         // TODO: Turn off lights for certain duration so ghosts can fly to objects, then kill ghosts and re-enable lights
-		// TODO: Once this is done, switch to play phase, enable character
 
         if (HintEvent != null)
             HintEvent();

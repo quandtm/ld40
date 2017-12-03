@@ -319,7 +319,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrentPhase: 0
   TotalHaunts: 1
+  TimeLimitSec: 60
+  SecondsBetweenHints: 10
   RemainingHaunts: 0
+  SecondsRemaining: 0
 --- !u!1 &968995886
 GameObject:
   m_ObjectHideFlags: 0
