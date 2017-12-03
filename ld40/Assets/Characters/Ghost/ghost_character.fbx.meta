@@ -338,7 +338,12 @@ ModelImporter:
     13700002: eye.l2
     13700004: Ghost_body
     13700006: Ghost_shirt
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BaseMatt
+    second: {fileID: 2100000, guid: e12623b2a43b0194f84c2c03ea24f54a, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
