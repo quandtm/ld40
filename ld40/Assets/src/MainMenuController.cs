@@ -5,10 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour
 {
-    public void BeginGame(string difficulty)
+    public List<GameConfig> configs;
+
+    public void BeginGame(int difficulty)
     {
-        SceneManager.LoadScene("GameLogic", LoadSceneMode.Single);
-        SceneManager.LoadScene("CamTest", LoadSceneMode.Additive);
+        if (difficulty >= 0 && difficulty < configs.Count)
+        {
+            GameDirector.NextConfig = configs[difficulty];
+            SceneManager.LoadScene("GameLogic", LoadSceneMode.Single);
+            SceneManager.LoadScene("CamTest", LoadSceneMode.Additive);
+        }
     }
 
     public void Quit()

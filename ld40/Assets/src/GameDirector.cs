@@ -13,16 +13,13 @@ public enum Phase
 
 public class GameDirector : MonoBehaviour
 {
+    public GameConfig BootstrapConfig;
+    public static GameConfig NextConfig = null;
     public static GameDirector Instance { get; private set; }
 
     public event Action HintEvent;
 
     public Phase CurrentPhase;
-
-    public int TotalHaunts = 1;
-    public float TimeLimitSec = 60f;
-    public float SecondsBetweenHints = 10f;
-    public float LastChanceHint = 10f;
 
     public int RemainingHaunts;
     public float SecondsRemaining;
@@ -35,6 +32,9 @@ public class GameDirector : MonoBehaviour
     {
         if (Instance == null)
             Instance = this;
+
+        if (NextConfig == null)
+            NextConfig = BootstrapConfig;
 
         CurrentPhase = Phase.PreHaunt;
     }
@@ -92,7 +92,7 @@ public class GameDirector : MonoBehaviour
         }
         else if (hintsEnabled)
         {
-            if (SecondsRemaining <= LastChanceHint)
+            if (SecondsRemaining <= NextConfig.LastChanceHintTime)
             {
                 if (HintEvent != null)
                     HintEvent();
@@ -101,7 +101,7 @@ public class GameDirector : MonoBehaviour
             else
             {
                 sinceLastHint += Time.deltaTime;
-                if (sinceLastHint >= SecondsBetweenHints)
+                if (sinceLastHint >= NextConfig.SecondsBetweenHints)
                 {
                     if (HintEvent != null)
                         HintEvent();
@@ -113,13 +113,14 @@ public class GameDirector : MonoBehaviour
 
     private void BeginHaunt()
     {
-        RemainingHaunts = TotalHaunts;
         CurrentPhase = Phase.Haunt;
-        SecondsRemaining = TimeLimitSec;
-        sinceLastHint = 0f;
-        hintsEnabled = true;
 
-        int toRemove = haunts.Count - TotalHaunts;
+        RemainingHaunts = NextConfig.NumGhosts;
+        SecondsRemaining = NextConfig.TimeLimit;
+        sinceLastHint = 0f;
+        hintsEnabled = NextConfig.EnableHints;
+
+        int toRemove = haunts.Count - RemainingHaunts;
         if (toRemove > 0)
         {
             // Remove some random haunt locations until we have enough
