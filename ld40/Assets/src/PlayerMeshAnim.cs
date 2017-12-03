@@ -63,14 +63,14 @@ public class PlayerMeshAnim : MonoBehaviour
 
 	public void OnFloorChange()
 	{
+		Debug.Log("Floor change");
         if (DoFloorChange != null)
             DoFloorChange();
-		Debug.Log("Floor change");
 	}
 
 	public void OnStairLeaveEnd()
 	{
-		Debug.Log("fin");
+		Debug.Log("StairLeaveEnd");
         IsInAnim = false;
 	}
 }
