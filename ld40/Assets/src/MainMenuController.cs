@@ -11,7 +11,7 @@ public class MainMenuController : MonoBehaviour
     {
         if (difficulty >= 0 && difficulty < configs.Count)
         {
-            GameDirector.NextConfig = configs[difficulty];
+            GameDirector.Instance.Setup(configs[difficulty]);
             SceneManager.LoadScene("GameLogic", LoadSceneMode.Single);
             SceneManager.LoadScene("CamTest", LoadSceneMode.Additive);
         }

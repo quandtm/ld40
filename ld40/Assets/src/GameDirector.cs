@@ -11,12 +11,8 @@ public enum Phase
     Buy
 }
 
-public class GameDirector : MonoBehaviour
+public class GameDirectorImpl
 {
-    public GameConfig BootstrapConfig;
-    public static GameConfig NextConfig = null;
-    public static GameDirector Instance { get; private set; }
-
     public event Action HintEvent;
 
     public Phase CurrentPhase;
@@ -28,18 +24,26 @@ public class GameDirector : MonoBehaviour
     private float sinceLastHint;
     private bool hintsEnabled;
 
-    void Start()
+    private GameConfig config;
+    public bool IsSetup { get { return config != null; } }
+
+    public void Setup(GameConfig cfg)
     {
-        if (NextConfig == null)
-            NextConfig = BootstrapConfig;
-
-        if (Instance == null)
-            Instance = this;
-
-        CurrentPhase = Phase.PreHaunt;
+        if (config != null)
+        {
+            Debug.LogError("Config already exists!");
+            return;
+        }
+        config = cfg;
     }
 
-    void Update()
+    public void RegisterHauntable(Hauntable haunt)
+    {
+        Debug.LogFormat("{0} registered as haunt", haunt.name);
+        haunts.Add(haunt);
+    }
+
+    public void Update()
     {
         switch (CurrentPhase)
         {
@@ -48,24 +52,14 @@ public class GameDirector : MonoBehaviour
                 break;
 
             case Phase.Haunt:
-                // TODO: Should wait until the haunt is over
                 CurrentPhase = Phase.Play;
+                Debug.Log("begin play");
                 break;
 
             case Phase.Play:
                 CheckGameConditions();
                 break;
         }
-    }
-
-    void Destroy()
-    {
-        Instance = null;
-    }
-
-    public void RegisterHauntable(Hauntable haunt)
-    {
-        haunts.Add(haunt);
     }
 
     private void CheckGameConditions()
@@ -84,15 +78,17 @@ public class GameDirector : MonoBehaviour
         {
             // Victory
             CurrentPhase = Phase.Buy;
+            Debug.Log("Victory");
         }
         else if (SecondsRemaining <= 0f)
         {
             // Loss (or is it?)
             CurrentPhase = Phase.Buy;
+            Debug.Log("Time out");
         }
         else if (hintsEnabled)
         {
-            if (SecondsRemaining <= NextConfig.LastChanceHintTime)
+            if (SecondsRemaining <= config.LastChanceHintTime)
             {
                 if (HintEvent != null)
                     HintEvent();
@@ -101,7 +97,7 @@ public class GameDirector : MonoBehaviour
             else
             {
                 sinceLastHint += Time.deltaTime;
-                if (sinceLastHint >= NextConfig.SecondsBetweenHints)
+                if (sinceLastHint >= config.SecondsBetweenHints)
                 {
                     if (HintEvent != null)
                         HintEvent();
@@ -113,12 +109,13 @@ public class GameDirector : MonoBehaviour
 
     private void BeginHaunt()
     {
+        Debug.Log("begin haunt");
         CurrentPhase = Phase.Haunt;
 
-        RemainingHaunts = NextConfig.NumGhosts;
-        SecondsRemaining = NextConfig.TimeLimit;
+        RemainingHaunts = config.NumGhosts;
+        SecondsRemaining = config.TimeLimit;
         sinceLastHint = 0f;
-        hintsEnabled = NextConfig.EnableHints;
+        hintsEnabled = config.EnableHints;
 
         int toRemove = haunts.Count - RemainingHaunts;
         if (toRemove > 0)
@@ -141,5 +138,40 @@ public class GameDirector : MonoBehaviour
 
         if (HintEvent != null)
             HintEvent();
+    }
+}
+
+public class GameDirector : MonoBehaviour
+{
+    public GameConfig BootstrapConfig;
+
+    private static GameDirectorImpl inst;
+    public static GameDirectorImpl Instance
+    {
+        get
+        {
+            if (inst == null)
+                inst = new GameDirectorImpl();
+            return inst;
+        }
+    }
+
+    void Start()
+    {
+        if (!Instance.IsSetup)
+        {
+            Debug.Log("Using bootstrap");
+            inst.Setup(BootstrapConfig);
+        }
+    }
+
+    void Update()
+    {
+        Instance.Update();
+    }
+
+    void Destroy()
+    {
+        inst = null;
     }
 }

@@ -12,18 +12,26 @@ public class Hauntable : MonoBehaviour
 
 	private int shakeAnimHash;
 	private Animator anim;
+	private bool registered = false;
 
 	void Start()
 	{
+        registered = false;
 		IsPossessed = false;
         PreviouslyInteracted = false;
 
-		shakeAnimHash = Animator.StringToHash("Shake");
-
-		GameDirector.Instance.RegisterHauntable(this);
-		GameDirector.Instance.HintEvent += new Action(OnHint);
-
 		anim = GetComponent<Animator>();
+		shakeAnimHash = Animator.StringToHash("Shake");
+	}
+
+	void Update()
+	{
+		if (!registered)
+		{
+			GameDirector.Instance.RegisterHauntable(this);
+			GameDirector.Instance.HintEvent += new Action(OnHint);
+			registered = true;
+		}
 	}
 
 	private void OnHint()
