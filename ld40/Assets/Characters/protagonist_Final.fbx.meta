@@ -346,7 +346,32 @@ ModelImporter:
     13700006: eye.r
     13700008: shirt
     13700010: trousers_and_shoes
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.004
+    second: {fileID: 2100000, guid: c6929f241424ddd49a4c1ccb0f844da1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_hair
+    second: {fileID: 2100000, guid: 5e038f0a2832ef949aeae4e3123f9c37, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_shirt_and_tie
+    second: {fileID: 2100000, guid: 5f4c6f47ef081c54cbcd6b2c20a8f059, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_skin
+    second: {fileID: 2100000, guid: d038a586bbeca044da37acb46036c319, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_trousers_and_shoes
+    second: {fileID: 2100000, guid: 425ee7330f5072747b30ad4f9f353c85, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
