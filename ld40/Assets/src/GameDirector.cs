@@ -109,6 +109,11 @@ public class GameDirectorImpl
 
     private void BeginHaunt()
     {
+        if (haunts.Count == 0)
+        {
+            Debug.Log("Nothing to haunt, waiting...");
+            return; // Keep spinning until we have some haunts
+        }
         Debug.Log("begin haunt");
         CurrentPhase = Phase.Haunt;
 

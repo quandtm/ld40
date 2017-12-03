@@ -14,6 +14,7 @@ public class MainMenuController : MonoBehaviour
             GameDirector.Instance.Setup(configs[difficulty]);
             SceneManager.LoadScene("GameLogic", LoadSceneMode.Single);
             SceneManager.LoadScene("CamTest", LoadSceneMode.Additive);
+            SceneManager.LoadScene("PlayUI", LoadSceneMode.Additive);
         }
     }
 
