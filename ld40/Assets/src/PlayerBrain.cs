@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -32,6 +33,14 @@ public class PlayerBrain : MonoBehaviour
     void Start()
     {
         body = GetComponent<Rigidbody>();
+        childMesh.DoFloorChange += new Action(HandleFloorChange);
+    }
+
+    private void HandleFloorChange()
+    {
+        var p = transform.position;
+        p.y = baseHeight + HeightOffset;
+        transform.position = p;
     }
 
     void Update()
@@ -127,9 +136,18 @@ public class PlayerBrain : MonoBehaviour
                             baseHeight = stairZone.GetDownZoneHeight();
 
                         body.velocity = Vector3.zero;
-                        var p = transform.position;
-                        p.y = baseHeight + HeightOffset;
-                        transform.position = p;
+                        if (vmov > 0f)
+                        {
+                            lookDir = LookDirection.Foreground;
+                            transform.rotation = Quaternion.Euler(0f, LeftYRotation + (float)lookDir, 0f);
+                            childMesh.ClimbStairs();
+                        }
+                        else
+                        {
+                            lookDir = LookDirection.Foreground;
+                            transform.rotation = Quaternion.Euler(0f, LeftYRotation + (float)lookDir, 0f);
+                            childMesh.DescendStairs();
+                        }
                     }
                     else
                     {
