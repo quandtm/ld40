@@ -42,6 +42,11 @@ public class GameDirector : MonoBehaviour
                 break;
 
             case Phase.Haunt:
+                // TODO: Should wait until the haunt is over
+                CurrentPhase = Phase.Play;
+                break;
+
+            case Phase.Play:
                 CheckGameConditions();
                 break;
         }
@@ -64,6 +69,13 @@ public class GameDirector : MonoBehaviour
         {
             if (haunt.IsPossessed)
                 numRemaining++;
+        }
+        RemainingHaunts = numRemaining;
+
+        if (RemainingHaunts == 0)
+        {
+            // Victory
+            CurrentPhase = Phase.Buy;
         }
     }
 

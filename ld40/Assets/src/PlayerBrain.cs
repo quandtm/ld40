@@ -32,95 +32,101 @@ public class PlayerBrain : MonoBehaviour
         body = GetComponent<Rigidbody>();
     }
 
-	void Update()
-	{
-		if (Input.GetButtonUp("Fire1"))
-		{
-			if(lookDir == LookDirection.Background)
-			{
-				if (proxHaunts[1] != null && !proxHaunts[1].PreviouslyInteracted)
-				{
-					// TODO: Animation based on IsPossessed state BEFORE change
-					if (proxHaunts[1].IsPossessed)
-					{
-						proxHaunts[1].IsPossessed = false;
-						Debug.Log("Ghost eliminated");
-					}
-				}
-			}
-			else if (lookDir == LookDirection.Foreground)
-			{
-				if (proxHaunts[0] != null && !proxHaunts[0].PreviouslyInteracted)
-				{
-					// TODO: Animation based on IsPossessed state BEFORE change
-					if (proxHaunts[0].IsPossessed)
-					{
-						proxHaunts[0].IsPossessed = false;
-						Debug.Log("Ghost eliminated");
-					}
-				}
-			}
-		}
-	}
+    void Update()
+    {
+        if (GameDirector.Instance.CurrentPhase == Phase.Play)
+        {
+            if (Input.GetButtonUp("Fire1"))
+            {
+                if (lookDir == LookDirection.Background)
+                {
+                    if (proxHaunts[1] != null && !proxHaunts[1].PreviouslyInteracted)
+                    {
+                        // TODO: Animation based on IsPossessed state BEFORE change
+                        if (proxHaunts[1].IsPossessed)
+                        {
+                            proxHaunts[1].IsPossessed = false;
+                            Debug.Log("Ghost eliminated");
+                        }
+                    }
+                }
+                else if (lookDir == LookDirection.Foreground)
+                {
+                    if (proxHaunts[0] != null && !proxHaunts[0].PreviouslyInteracted)
+                    {
+                        // TODO: Animation based on IsPossessed state BEFORE change
+                        if (proxHaunts[0].IsPossessed)
+                        {
+                            proxHaunts[0].IsPossessed = false;
+                            Debug.Log("Ghost eliminated");
+                        }
+                    }
+                }
+            }
+        }
+    }
 
     void FixedUpdate()
     {
-        float vmov = Input.GetAxis("Vertical");
-        bool vmovJustPressed = false;
-        if (Mathf.Abs(vmov) > VerticalThreshold)
+        if (GameDirector.Instance.CurrentPhase == Phase.Play)
         {
-            if (!vMovHandled)
+            float vmov = Input.GetAxis("Vertical");
+            bool vmovJustPressed = false;
+            if (Mathf.Abs(vmov) > VerticalThreshold)
             {
-                vMovHandled = true;
-                vmovJustPressed = true;
-            }
-        }
-        else
-        {
-            vMovHandled = false;
-
-            float hmov = Input.GetAxis("Horizontal");
-            float moveDist = 0f;
-            if (Mathf.Abs(hmov) > HorizontalDeadzone)
-            {
-                moveDist = hmov * Time.deltaTime * Speed;
-                lookDir = moveDist > 0f ? LookDirection.Right : LookDirection.Left;
-                float newVelocity = Speed * (moveDist > 0f ? 1f : -1f);
-                body.velocity = new Vector3(newVelocity, 0f, 0f);
-                var rot = Quaternion.Euler(0f, LeftYRotation + (float)lookDir, 0f);
-                body.rotation = rot;
-            }
-        }
-
-        if (vmovJustPressed)
-        {
-            if (stairZone != null)
-            {
-                if (vmov > 0f)
-                    baseHeight = stairZone.GetUpZoneHeight();
-                else
-                    baseHeight = stairZone.GetDownZoneHeight();
-
-                body.velocity = Vector3.zero;
-                var p = transform.position;
-                p.y = baseHeight + HeightOffset;
-                transform.position = p;
+                if (!vMovHandled)
+                {
+                    vMovHandled = true;
+                    vmovJustPressed = true;
+                }
             }
             else
             {
-                if (vmov > 0f)
+                vMovHandled = false;
+
+                float hmov = Input.GetAxis("Horizontal");
+                float moveDist = 0f;
+                if (Mathf.Abs(hmov) > HorizontalDeadzone)
                 {
-                    if (proxHaunts[1] != null)
-                        lookDir = LookDirection.Background;
+                    moveDist = hmov * Time.deltaTime * Speed;
+                    lookDir = moveDist > 0f ? LookDirection.Right : LookDirection.Left;
+                    float newVelocity = Speed * (moveDist > 0f ? 1f : -1f);
+                    body.velocity = new Vector3(newVelocity, 0f, 0f);
+                    var rot = Quaternion.Euler(0f, LeftYRotation + (float)lookDir, 0f);
+                    body.rotation = rot;
+                }
+            }
+
+            if (vmovJustPressed)
+            {
+                if (stairZone != null)
+                {
+                    if (vmov > 0f)
+                        baseHeight = stairZone.GetUpZoneHeight();
+                    else
+                        baseHeight = stairZone.GetDownZoneHeight();
+
+                    body.velocity = Vector3.zero;
+                    var p = transform.position;
+                    p.y = baseHeight + HeightOffset;
+                    transform.position = p;
                 }
                 else
                 {
-                    if (proxHaunts[0] != null)
-                        lookDir = LookDirection.Foreground;
-                }
+                    if (vmov > 0f)
+                    {
+                        if (proxHaunts[1] != null)
+                            lookDir = LookDirection.Background;
+                    }
+                    else
+                    {
+                        if (proxHaunts[0] != null)
+                            lookDir = LookDirection.Foreground;
+                    }
 
-                var rot = Quaternion.Euler(0f, LeftYRotation + (float)lookDir, 0f);
-                body.rotation = rot;
+                    var rot = Quaternion.Euler(0f, LeftYRotation + (float)lookDir, 0f);
+                    body.rotation = rot;
+                }
             }
         }
     }
