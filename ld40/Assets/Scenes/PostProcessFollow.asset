@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a3bdb2cd68f901469e7cc149151eb49, type: 3}
-  m_Name: Post-Process-Profile 1
+  m_Name: PostProcessFollow
   m_EditorClassIdentifier: 
   debugViews:
     m_Enabled: 1
@@ -71,16 +71,16 @@ MonoBehaviour:
   depthOfField:
     m_Enabled: 1
     m_Settings:
-      focusDistance: 5.09
-      aperture: 12.6
-      focalLength: 137
+      focusDistance: 2.79
+      aperture: 32
+      focalLength: 148.63
       useCameraFov: 0
       kernelSize: 1
   motionBlur:
-    m_Enabled: 0
+    m_Enabled: 1
     m_Settings:
-      shutterAngle: 270
-      sampleCount: 10
+      shutterAngle: 221
+      sampleCount: 31
       frameBlending: 0
   eyeAdaptation:
     m_Enabled: 0
@@ -97,12 +97,12 @@ MonoBehaviour:
       logMin: -8
       logMax: 4
   bloom:
-    m_Enabled: 1
+    m_Enabled: 0
     m_Settings:
       bloom:
         intensity: 0
         threshold: 1.1
-        softKnee: 0.483
+        softKnee: 0.44
         radius: 2.04
         antiFlicker: 0
       lensDirt:
@@ -287,10 +287,10 @@ MonoBehaviour:
       lut: {fileID: 0}
       contribution: 1
   chromaticAberration:
-    m_Enabled: 0
+    m_Enabled: 1
     m_Settings:
       spectralTexture: {fileID: 0}
-      intensity: 0.1
+      intensity: 0.452
   grain:
     m_Enabled: 0
     m_Settings:
