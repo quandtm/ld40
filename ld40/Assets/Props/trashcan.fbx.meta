@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 95c560651fd4538488785241a4c26dae
-timeCreated: 1512358882
+timeCreated: 1512366310
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -45,6 +45,16 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: lambert2
     second: {fileID: 2100000, guid: 3d650c7a001a8eb49b8f6912d237084a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: papermat
+    second: {fileID: 2100000, guid: b11595a675b3f64408a2e5164fcb6e82, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: trashcanmat
+    second: {fileID: 2100000, guid: 645db002205428147b05390c372f4486, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

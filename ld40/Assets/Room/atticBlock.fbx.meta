@@ -6,10 +6,102 @@ ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Attic1
+    100004: beanBag
+    100006: boxes
+    100008: gamebox
+    100010: GameConsole
+    100012: pCube38
+    100014: pCube39
+    100016: pCube40
+    100018: pCube41
+    100020: pCube43
+    100022: pCube44
+    100024: pCube45
+    100026: pCube47
+    100028: pCube48
+    100030: pCube49
+    100032: pCylinder11
+    100034: pCylinder12
+    100036: pCylinder13
+    100038: pCylinder14
+    100040: tv
+    100042: tvStand
     400000: //RootNode
+    400002: Attic1
+    400004: beanBag
+    400006: boxes
+    400008: gamebox
+    400010: GameConsole
+    400012: pCube38
+    400014: pCube39
+    400016: pCube40
+    400018: pCube41
+    400020: pCube43
+    400022: pCube44
+    400024: pCube45
+    400026: pCube47
+    400028: pCube48
+    400030: pCube49
+    400032: pCylinder11
+    400034: pCylinder12
+    400036: pCylinder13
+    400038: pCylinder14
+    400040: tv
+    400042: tvStand
     2300000: //RootNode
+    2300002: Attic1
+    2300004: beanBag
+    2300006: gamebox
+    2300008: pCube38
+    2300010: pCube39
+    2300012: pCube40
+    2300014: pCube41
+    2300016: pCube43
+    2300018: pCube44
+    2300020: pCube45
+    2300022: pCube47
+    2300024: pCube48
+    2300026: pCube49
+    2300028: pCylinder11
+    2300030: pCylinder12
+    2300032: pCylinder13
+    2300034: pCylinder14
     3300000: //RootNode
+    3300002: Attic1
+    3300004: beanBag
+    3300006: gamebox
+    3300008: pCube38
+    3300010: pCube39
+    3300012: pCube40
+    3300014: pCube41
+    3300016: pCube43
+    3300018: pCube44
+    3300020: pCube45
+    3300022: pCube47
+    3300024: pCube48
+    3300026: pCube49
+    3300028: pCylinder11
+    3300030: pCylinder12
+    3300032: pCylinder13
+    3300034: pCylinder14
     4300000: Attic1
+    4300002: pCube38
+    4300004: pCube39
+    4300006: beanBag
+    4300008: pCube47
+    4300010: gamebox
+    4300012: pCube43
+    4300014: pCube44
+    4300016: pCube45
+    4300018: pCube48
+    4300020: pCube49
+    4300022: pCube40
+    4300024: pCylinder11
+    4300026: pCylinder12
+    4300028: pCylinder13
+    4300030: pCylinder14
+    4300032: pCube41
     9500000: //RootNode
   externalObjects:
   - first:
@@ -20,8 +112,33 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: CeilingMatt4
+    second: {fileID: 2100000, guid: e615f5099c8b329418948f296ef570e5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: FloorMat
     second: {fileID: 2100000, guid: 1ccb9bb5c3b4631438d2ccd6e58d3091, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FloorMat4
+    second: {fileID: 2100000, guid: 719340e15a228a741bc255d51a014ff8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GlassAccentMatt
+    second: {fileID: 2100000, guid: 3ac331db137bd8a419915264e9dfb33e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetalAccentMatt
+    second: {fileID: 2100000, guid: 9cf144d93022fee4dad134c1e54d5553, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TableMatt
+    second: {fileID: 2100000, guid: 446b6b7e01efad847bfd77076f2c0855, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -30,8 +147,48 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: TrimMatt4
+    second: {fileID: 2100000, guid: 76f3cd0dbeeac404ba40bbdae51b184a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: WallMat
     second: {fileID: 2100000, guid: 3deec94645d24684ebb4a2dfc142bd00, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: atticFloorMAtt
+    second: {fileID: 2100000, guid: a6a5bd768f27ea44cb5d5fda89bc3595, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: atticWallMatt
+    second: {fileID: 2100000, guid: 9af9a6b8621d0f14293fc676731c1696, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: beanbagMatt
+    second: {fileID: 2100000, guid: 55341e7559934734b8f2c36706800260, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: boxMatt
+    second: {fileID: 2100000, guid: 4b9de96f69634c949a440eacc7f07915, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gameConsoleMatt
+    second: {fileID: 2100000, guid: e3f77b18af65f0240a7ad632390996cd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 6093371429201e6418ff2149c169d09f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tvMATT
+    second: {fileID: 2100000, guid: 2abfbcbef70c0c143af7c737c43a831b, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

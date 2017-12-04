@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 0a8b70598530e8a43a078257698bbd04
-timeCreated: 1512358881
+timeCreated: 1512366309
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -63,6 +63,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: insidecanmat
+    second: {fileID: 2100000, guid: 3815b38e6ec152e49b387e659405f6e0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: lambert1
     second: {fileID: 2100000, guid: cd4bd8add7346a5418d72a7cf5e4bd2d, type: 2}
   - first:
@@ -85,6 +90,26 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: lambert6
     second: {fileID: 2100000, guid: d4e0447afb8f600428571335561e6dee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: leafmat
+    second: {fileID: 2100000, guid: da1f0eea11ff80a4a92d58c6f0eca171, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: trash2mat
+    second: {fileID: 2100000, guid: fac3003a4a6baec489f2fe97da46e327, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: trash3mat
+    second: {fileID: 2100000, guid: 8ee7603182d327f4e8ee49e9243ce5af, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: trashcan2mat
+    second: {fileID: 2100000, guid: d062d5e18a87cd54a8643838ee2f8fdf, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
