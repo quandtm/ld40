@@ -6,10 +6,61 @@ ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: artEasel
+    100004: carpet
+    100006: Chair2
+    100008: Chair3
+    100010: computer
+    100012: desk
+    100014: keyboard
+    100016: Monitor
+    100018: Office1
+    100020: pCube5
+    100022: pCube6
     400000: //RootNode
+    400002: artEasel
+    400004: carpet
+    400006: Chair2
+    400008: Chair3
+    400010: computer
+    400012: desk
+    400014: keyboard
+    400016: Monitor
+    400018: Office1
+    400020: pCube5
+    400022: pCube6
     2300000: //RootNode
+    2300002: carpet
+    2300004: Chair2
+    2300006: Chair3
+    2300008: computer
+    2300010: desk
+    2300012: keyboard
+    2300014: Monitor
+    2300016: Office1
+    2300018: pCube5
+    2300020: pCube6
     3300000: //RootNode
+    3300002: carpet
+    3300004: Chair2
+    3300006: Chair3
+    3300008: computer
+    3300010: desk
+    3300012: keyboard
+    3300014: Monitor
+    3300016: Office1
+    3300018: pCube5
+    3300020: pCube6
     4300000: Office1
+    4300002: Chair2
+    4300004: desk
+    4300006: pCube5
+    4300008: pCube6
+    4300010: Chair3
+    4300012: carpet
+    4300014: Monitor
+    4300016: keyboard
+    4300018: computer
     9500000: //RootNode
   externalObjects:
   - first:
@@ -20,8 +71,38 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: CeilingMatt5
+    second: {fileID: 2100000, guid: 40db83155f0e94c46b6e6d77e0538826, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ChairMatt
+    second: {fileID: 2100000, guid: 94cf9729cb6e1aa4fbcd6da0eff42856, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ElectonicsMatt
+    second: {fileID: 2100000, guid: e540d516e8da107498f91110a6f022e1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: FloorMat
     second: {fileID: 2100000, guid: 1ccb9bb5c3b4631438d2ccd6e58d3091, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GlassAccentMatt
+    second: {fileID: 2100000, guid: 3ac331db137bd8a419915264e9dfb33e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: OfficeFloorMatt
+    second: {fileID: 2100000, guid: bbf768132d4869a49903fac4c0eb7882, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TableMatt
+    second: {fileID: 2100000, guid: 446b6b7e01efad847bfd77076f2c0855, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -30,8 +111,33 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: TrimMatt5
+    second: {fileID: 2100000, guid: b70160035a4c34b4190365df34deef24, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: WallMat
     second: {fileID: 2100000, guid: 3deec94645d24684ebb4a2dfc142bd00, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert34
+    second: {fileID: 2100000, guid: f89aa2be9f4c17a4a9429b758c49642d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert37
+    second: {fileID: 2100000, guid: ea49b8b27158c0e43a6bbe521e95ad9d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: officeWallMatt
+    second: {fileID: 2100000, guid: 56a4429c80165074e92161262031214b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: woodtex1
+    second: {fileID: 2100000, guid: f6ea4838a22ad7640a58f2000314d4b2, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
