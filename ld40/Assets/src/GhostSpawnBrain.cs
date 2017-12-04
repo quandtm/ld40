@@ -1,10 +1,25 @@
 ﻿using UnityEngine;
 
+public enum GhostType
+{
+    FloatIn,
+    Scared,
+    Spooker
+}
+
 public class GhostSpawnBrain : MonoBehaviour
 {
+    public GhostType type;
     public Vector3 Destination;
     public float Speed;
     bool alive = true;
+
+    public bool IsAnimating = false;
+    private Animator anim;
+    private int fleeAnimTrig;
+    private int spookAnimTrig;
+    private int fleeAnimName;
+    private int spookAnimName;
 
     void Start()
     {
@@ -18,8 +33,62 @@ public class GhostSpawnBrain : MonoBehaviour
 
     void Update()
     {
-        var toDst = Destination - transform.position;
-        transform.position = transform.position + (toDst.normalized * Speed * Time.deltaTime);
+        switch (type)
+        {
+            case GhostType.FloatIn:
+                var toDst = Destination - transform.position;
+                transform.position = transform.position + (toDst.normalized * Speed * Time.deltaTime);
+                break;
+
+            case GhostType.Scared:
+                HandleNonFloat();
+                break;
+
+            case GhostType.Spooker:
+                HandleNonFloat();
+                break;
+        }
+    }
+
+    private void HandleNonFloat()
+    {
+        var animState = anim.GetCurrentAnimatorStateInfo(0);
+        if (animState.shortNameHash == fleeAnimName || animState.shortNameHash == spookAnimName)
+        {
+            IsAnimating = true;
+        }
+        else
+        {
+            if (IsAnimating)
+            {
+                IsAnimating = false;
+                gameObject.SetActive(false);
+            }
+        }
+    }
+
+    public void PlayScared()
+    {
+        CheckAnim();
+        anim.SetTrigger(fleeAnimTrig);
+    }
+
+    public void PlaySpook()
+    {
+        CheckAnim();
+        anim.SetTrigger(spookAnimTrig);
+    }
+
+    private void CheckAnim()
+    {
+        if (anim == null)
+        {
+            anim = GetComponent<Animator>();
+            fleeAnimTrig = Animator.StringToHash("DoFlee");
+            spookAnimTrig = Animator.StringToHash("DoSpookBuyer");
+            fleeAnimName = Animator.StringToHash("ghost_scareoff");
+            spookAnimName = Animator.StringToHash("ghost_spook");
+        }
     }
 
     void OnPhaseChange()

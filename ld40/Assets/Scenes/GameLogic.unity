@@ -707,6 +707,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsInAnim: 0
+  ghostPrefab: {fileID: 1660206587257394, guid: 9130ee9e9d4852749b4e069633278d64,
+    type: 2}
 --- !u!1 &2116094165
 GameObject:
   m_ObjectHideFlags: 0

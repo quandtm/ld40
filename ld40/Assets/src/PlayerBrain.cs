@@ -60,13 +60,17 @@ public class PlayerBrain : MonoBehaviour
                 if (Input.GetButtonUp("Fire1"))
                 {
                     bool shouldAnim = false;
+                    bool hasGhost = false;
                     if (lookDir == LookDirection.Background)
                     {
                         if (proxHaunts[1] != null && !proxHaunts[1].PreviouslyInteracted)
                         {
                             // TODO: Animation based on IsPossessed state BEFORE change
                             if (proxHaunts[1].IsPossessed)
+                            {
                                 curExorcising = proxHaunts[1];
+                                hasGhost=true;
+                            }
                             proxHaunts[1].PreviouslyInteracted = true;
                             shouldAnim = true;
                         }
@@ -75,9 +79,11 @@ public class PlayerBrain : MonoBehaviour
                     {
                         if (proxHaunts[0] != null && !proxHaunts[0].PreviouslyInteracted)
                         {
-                            // TODO: Animation based on IsPossessed state BEFORE change
                             if (proxHaunts[0].IsPossessed)
+                            {
+                                hasGhost=true;
                                 curExorcising = proxHaunts[0];
+                            }
                             proxHaunts[0].PreviouslyInteracted = true;
                             shouldAnim = true;
                         }
@@ -85,6 +91,9 @@ public class PlayerBrain : MonoBehaviour
 
                     if (shouldAnim)
                         childMesh.PlayScare();
+
+                    if (hasGhost)
+                        childMesh.ShowScaredGhost();
                 }
                 else
                 {

@@ -15,6 +15,10 @@ public class PlayerMeshAnim : MonoBehaviour
 
 	public bool IsInAnim = false;
 
+	public GameObject ghostPrefab;
+	private GameObject ghost;
+	private GhostSpawnBrain ghostBrain;
+
 	void Start()
 	{
 		moveBlendHash = Animator.StringToHash("MoveSpeed");
@@ -22,6 +26,16 @@ public class PlayerMeshAnim : MonoBehaviour
 		stairClimbHash = Animator.StringToHash("DoStairClimb");
 		stairDescendHash = Animator.StringToHash("DoStairDescend");
 		anim = GetComponent<Animator>();
+
+		ghost = GameObject.Instantiate(ghostPrefab, Vector3.zero, Quaternion.identity);
+		ghostBrain = ghost.GetComponent<GhostSpawnBrain>();
+		ghostBrain.type = GhostType.Scared;
+		ghost.name = "ScaredGhost";
+		ghost.transform.parent = transform;
+		ghost.transform.localPosition = new Vector3(0, .25f, 1);
+		ghost.transform.localRotation = Quaternion.Euler(0, 165, 0);
+
+		ghost.SetActive(false);
 	}
     public void SetSpeed(float speed)
     {
@@ -62,14 +76,18 @@ public class PlayerMeshAnim : MonoBehaviour
 
 	public void OnFloorChange()
 	{
-		Debug.Log("Floor change");
         if (DoFloorChange != null)
             DoFloorChange();
 	}
 
 	public void OnStairLeaveEnd()
 	{
-		Debug.Log("StairLeaveEnd");
         IsInAnim = false;
+	}
+
+	public void ShowScaredGhost()
+	{
+		ghost.SetActive(true);
+		ghostBrain.PlayScared();
 	}
 }
