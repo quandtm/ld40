@@ -12,6 +12,7 @@ public class ResultsStore
     }
 
     public int BuyersRemaining;
+    public int TotalPossibleBuyers;
     public float TimeRemaining;
     public int MinBuyersForWin;
 }
