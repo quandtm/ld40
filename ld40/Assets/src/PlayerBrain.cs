@@ -155,6 +155,9 @@ public class PlayerBrain : MonoBehaviour
                             {
                                 lookDir = LookDirection.Foreground;
                                 transform.rotation = Quaternion.Euler(0f, LeftYRotation + (float)lookDir, 0f);
+                                var p = transform.position;
+                                p.x = stairZone.transform.position.x;
+                                transform.position = p;
                                 childMesh.ClimbStairs();
                             }
                         }
@@ -165,6 +168,9 @@ public class PlayerBrain : MonoBehaviour
                             {
                                 lookDir = LookDirection.Foreground;
                                 transform.rotation = Quaternion.Euler(0f, LeftYRotation + (float)lookDir, 0f);
+                                var p = transform.position;
+                                p.x = stairZone.transform.position.x;
+                                transform.position = p;
                                 childMesh.DescendStairs();
                             }
                         }
