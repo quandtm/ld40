@@ -175,8 +175,9 @@ public class GameDirectorImpl
                 {
                     var results = ResultsStore.Instance;
                     results.BuyersRemaining = config.NumGhosts - RemainingHaunts;
-                    results.TimeRemaining = hauntTimeRemaining;
+                    results.TimeRemaining = SecondsRemaining;
                     results.MinBuyersForWin = config.MinBuyersForWin;
+                    results.TotalPossibleBuyers = config.NumGhosts;
 
                     SceneManager.LoadScene("ResultsScreen", LoadSceneMode.Single);
                 }

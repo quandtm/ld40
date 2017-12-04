@@ -199,6 +199,7 @@ GameObject:
   - component: {fileID: 375852468}
   - component: {fileID: 375852467}
   - component: {fileID: 375852466}
+  - component: {fileID: 375852469}
   m_Layer: 5
   m_Name: results
   m_TagString: Untagged
@@ -221,8 +222,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 280, y: 161.29}
+  m_AnchoredPosition: {x: 0, y: 5.9}
+  m_SizeDelta: {x: 280, y: 196.86}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &375852466
 MonoBehaviour:
@@ -264,24 +265,38 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 1
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '{0} buyers ran away
-
-    {1} remain
+  m_Text: 'Time remaining: {0}
 
 
-    You made ${2:###,##0}'
+    {1} buyers ran away
+
+    {2} remain
+
+
+    You made ${3:###,##0}'
 --- !u!222 &375852468
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 375852464}
+--- !u!114 &375852469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 375852464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ea513ab46938894baeb834f9e62e896, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &442632906
 GameObject:
   m_ObjectHideFlags: 0
