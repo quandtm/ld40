@@ -6,12 +6,151 @@ ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Bathroom1
+    100004: BathroomSink
+    100006: Faucet
+    100008: KitchenCabinet7
+    100010: pCube35
+    100012: pCube36
+    100014: pCylinder7
+    100016: pCylinder8
+    100018: WindwoFrame2
+    100020: bathtub
+    100022: curtainRod
+    100024: Faucet1
+    100026: pCube35 1
+    100028: pCube36 1
+    100030: pCube37
+    100032: pCylinder10
+    100034: pCylinder7 1
+    100036: pCylinder8 1
+    100038: pTorus1
+    100040: pTorus2
+    100042: pTorus3
+    100044: pTorus4
+    100046: pTorus5
+    100048: Shower
+    100050: ShowerCurtain
+    100052: ShowerHead
+    100054: Toilet
     400000: //RootNode
+    400002: Bathroom1
+    400004: BathroomSink
+    400006: Faucet
+    400008: KitchenCabinet7
+    400010: pCube35
+    400012: pCube36
+    400014: pCylinder7
+    400016: pCylinder8
+    400018: WindwoFrame2
+    400020: bathtub
+    400022: curtainRod
+    400024: Faucet1
+    400026: pCube35 1
+    400028: pCube36 1
+    400030: pCube37
+    400032: pCylinder10
+    400034: pCylinder7 1
+    400036: pCylinder8 1
+    400038: pTorus1
+    400040: pTorus2
+    400042: pTorus3
+    400044: pTorus4
+    400046: pTorus5
+    400048: Shower
+    400050: ShowerCurtain
+    400052: ShowerHead
+    400054: Toilet
     2300000: //RootNode
+    2300002: Bathroom1
+    2300004: KitchenCabinet7
+    2300006: pCube35
+    2300008: pCube36
+    2300010: pCylinder7
+    2300012: pCylinder8
+    2300014: WindwoFrame2
+    2300016: bathtub
+    2300018: curtainRod
+    2300020: pCube35 1
+    2300022: pCube36 1
+    2300024: pCube37
+    2300026: pCylinder10
+    2300028: pCylinder7 1
+    2300030: pCylinder8 1
+    2300032: pTorus1
+    2300034: pTorus2
+    2300036: pTorus3
+    2300038: pTorus4
+    2300040: pTorus5
+    2300042: ShowerHead
+    2300044: Toilet
     3300000: //RootNode
+    3300002: Bathroom1
+    3300004: KitchenCabinet7
+    3300006: pCube35
+    3300008: pCube36
+    3300010: pCylinder7
+    3300012: pCylinder8
+    3300014: WindwoFrame2
+    3300016: bathtub
+    3300018: curtainRod
+    3300020: pCube35 1
+    3300022: pCube36 1
+    3300024: pCube37
+    3300026: pCylinder10
+    3300028: pCylinder7 1
+    3300030: pCylinder8 1
+    3300032: pTorus1
+    3300034: pTorus2
+    3300036: pTorus3
+    3300038: pTorus4
+    3300040: pTorus5
+    3300042: ShowerHead
+    3300044: Toilet
     4300000: Bathroom1
+    4300002: KitchenCabinet7
+    4300004: pCube36
+    4300006: pCylinder8
+    4300008: pCylinder7
+    4300010: pCube35
+    4300012: WindwoFrame2
+    4300014: Toilet
+    4300016: curtainRod
+    4300018: bathtub
+    4300020: pTorus1
+    4300022: pTorus2
+    4300024: pTorus3
+    4300026: pTorus4
+    4300028: pTorus5
+    4300030: pCube37
+    4300032: pCylinder10
+    4300034: pCube36
+    4300036: pCylinder8
+    4300038: pCylinder7
+    4300040: pCube35
+    4300042: ShowerHead
     9500000: //RootNode
   externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BathroomFloorMatt1
+    second: {fileID: 2100000, guid: a595b8f309d014f43980f82ca6b038f7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BathroomWallMatt
+    second: {fileID: 2100000, guid: b871a45e756f949468b6515f5d7e76f9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CabinetDoorMatt
+    second: {fileID: 2100000, guid: bd4cc93c852d5ef488685d9d0dddea11, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CabinetMatt
+    second: {fileID: 2100000, guid: 7175026cd1d282047b848274ee6c9eaf, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -20,8 +159,43 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: CeilingMatt2
+    second: {fileID: 2100000, guid: c84911524a2812b4c907d5383ca41359, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: FloorMat
     second: {fileID: 2100000, guid: 1ccb9bb5c3b4631438d2ccd6e58d3091, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FloorMat2
+    second: {fileID: 2100000, guid: d249e029f9457154a84d20ecc2ba2cbc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: KitchenWallMatt
+    second: {fileID: 2100000, guid: 5d247c1a19f88094f9dc682971d3cd8b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetalAccentMatt
+    second: {fileID: 2100000, guid: 9cf144d93022fee4dad134c1e54d5553, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PorcelainMatt
+    second: {fileID: 2100000, guid: 10b8d5fad6a740e468e01c12bed32f58, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ReferenceShader
+    second: {fileID: 2100000, guid: d718b10196360da499ebaa897d96a744, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ShowerCurtainMATT
+    second: {fileID: 2100000, guid: 939427fa3f54c884a960e5c7d217280e, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -30,8 +204,38 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: TrimMatt2
+    second: {fileID: 2100000, guid: d3eb88459b002694eaf293bd30ba3a0e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: WallMat
     second: {fileID: 2100000, guid: 3deec94645d24684ebb4a2dfc142bd00, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WallMat1
+    second: {fileID: 2100000, guid: 27df35dbb307fcd4cbb8ca6c230a529c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WindowFrameMatt
+    second: {fileID: 2100000, guid: 584d514b63643134a844c232383c5e7a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WindowGlassMatt
+    second: {fileID: 2100000, guid: 987943f5082d03149afa0abf4894cf16, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WindowGlassMatt1
+    second: {fileID: 2100000, guid: 1190b435e62b1524aa159ec13392376f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 6093371429201e6418ff2149c169d09f, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
