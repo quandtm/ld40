@@ -89,7 +89,6 @@ public class GameDirectorImpl
 
     public void RegisterHauntable(Hauntable haunt)
     {
-        Debug.LogFormat("{0} registered as haunt", haunt.name);
         haunts.Add(haunt);
     }
 
@@ -109,7 +108,6 @@ public class GameDirectorImpl
             {
                 CurrentPhase = Phase.PlayToBuy;
                 BeginTransition();
-                Debug.Log("Victory");
             }
         }
     }
@@ -205,7 +203,6 @@ public class GameDirectorImpl
             // Loss (or is it?)
             CurrentPhase = Phase.PlayToBuy;
             BeginTransition();
-            Debug.Log("Time out");
         }
         else if (hintsEnabled)
         {
@@ -232,10 +229,8 @@ public class GameDirectorImpl
     {
         if (haunts.Count == 0)
         {
-            Debug.Log("Nothing to haunt, waiting...");
             return; // Keep spinning until we have some haunts
         }
-        Debug.Log("begin haunt");
         CurrentPhase = Phase.Haunt;
 
         RemainingHaunts = config.NumGhosts;
@@ -304,7 +299,6 @@ public class GameDirector : MonoBehaviour
     {
         if (!Instance.IsSetup)
         {
-            Debug.Log("Using bootstrap");
             inst.Setup(BootstrapConfig);
         }
 
@@ -322,7 +316,6 @@ public class GameDirector : MonoBehaviour
 
     void OnDestroy()
     {
-        Debug.Log("Destroying game director");
         inst = null;
     }
 }

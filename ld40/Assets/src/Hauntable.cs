@@ -73,7 +73,6 @@ public class Hauntable : MonoBehaviour
 				var lp = boxCenter;
 				lp.y = -(GetComponent<BoxCollider>().size.y / 2f);
 				xform.localPosition = lp;
-				Debug.Log(xform.localPosition);
 				var brain = go.GetComponent<BuyerBrain>();
 				brain.WasStillPossessed = isPossessed;
 			}

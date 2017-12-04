@@ -60,7 +60,6 @@ public class PlayerBrain : MonoBehaviour
                     curExorcising.PreviouslyInteracted = true;
                     curExorcising.IsPossessed = false;
                     curExorcising = null;
-                    Debug.Log("Ghost eliminated");
                 }
                 if (Input.GetButtonUp("Fire1"))
                 {
