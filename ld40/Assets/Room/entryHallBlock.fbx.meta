@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 0d4d351f1db7ba949a67bfd5c5af08bd
-timeCreated: 1512267617
+timeCreated: 1512374300
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -25,6 +25,18 @@ ModelImporter:
     100034: UmbrellaStand
     100036: WallMirror
     100038: WelcomeMAtt
+    100040: Bench2
+    100042: doorknob
+    100044: FrontDoor 1
+    100046: pCylinder1
+    100048: pCylinder1 1
+    100050: pCylinder2
+    100052: pCylinder2 1
+    100054: Umbrella
+    100056: Umbrella1
+    100058: UmbrellaStand 1
+    100060: EntryBench
+    100062: UmbrellaS
     400000: //RootNode
     400002: Bench
     400004: CeilingLight
@@ -45,6 +57,18 @@ ModelImporter:
     400034: UmbrellaStand
     400036: WallMirror
     400038: WelcomeMAtt
+    400040: Bench2
+    400042: doorknob
+    400044: FrontDoor 1
+    400046: pCylinder1
+    400048: pCylinder1 1
+    400050: pCylinder2
+    400052: pCylinder2 1
+    400054: Umbrella
+    400056: Umbrella1
+    400058: UmbrellaStand 1
+    400060: EntryBench
+    400062: UmbrellaS
     2300000: //RootNode
     2300002: Bench
     2300004: CeilingLight
@@ -64,6 +88,15 @@ ModelImporter:
     2300032: UmbrellaStand
     2300034: WallMirror
     2300036: WelcomeMAtt
+    2300038: Bench2
+    2300040: doorknob
+    2300042: FrontDoor 1
+    2300044: pCylinder1
+    2300046: pCylinder1 1
+    2300048: pCylinder2
+    2300050: pCylinder2 1
+    2300052: UmbrellaStand 1
+    2300054: EntryBench
     3300000: //RootNode
     3300002: Bench
     3300004: CeilingLight
@@ -83,6 +116,15 @@ ModelImporter:
     3300032: UmbrellaStand
     3300034: WallMirror
     3300036: WelcomeMAtt
+    3300038: Bench2
+    3300040: doorknob
+    3300042: FrontDoor 1
+    3300044: pCylinder1
+    3300046: pCylinder1 1
+    3300048: pCylinder2
+    3300050: pCylinder2 1
+    3300052: UmbrellaStand 1
+    3300054: EntryBench
     4300000: EntryHall1
     4300002: FrontDoor
     4300004: UmbrellaStand
@@ -101,8 +143,20 @@ ModelImporter:
     4300030: pCube8
     4300032: pCube9
     4300034: pCube10
+    4300036: doorknob
+    4300038: Bench2
+    4300040: pCylinder1
+    4300042: pCylinder2
+    4300044: pCylinder1
+    4300046: pCylinder2
+    4300048: EntryBench
     9500000: //RootNode
   externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BenchCushion
+    second: {fileID: 2100000, guid: f067fd5a34e1c2a4a97d9e1c85883c7c, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -111,8 +165,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: BenchWoodMatt
+    second: {fileID: 2100000, guid: 095821305cb76e04ca09821915aa1f17, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: CeilingMatt
     second: {fileID: 2100000, guid: e3e060000785531459c7deddb90016b1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DoorMatt
+    second: {fileID: 2100000, guid: a6f23f082cadb58488ef20303170aa45, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -133,6 +197,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: LampMatt
     second: {fileID: 2100000, guid: badba178565d13a4bad47d39ec9b4087, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetalAccentMatt2
+    second: {fileID: 2100000, guid: 3a7c1a66cf57b144087a67f7dd5db379, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
