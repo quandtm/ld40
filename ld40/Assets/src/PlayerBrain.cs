@@ -159,15 +159,9 @@ public class PlayerBrain : MonoBehaviour
                     else
                     {
                         if (vmov > 0f)
-                        {
-                            if (proxHaunts[1] != null)
-                                lookDir = LookDirection.Background;
-                        }
+                            lookDir = LookDirection.Background;
                         else
-                        {
-                            if (proxHaunts[0] != null)
-                                lookDir = LookDirection.Foreground;
-                        }
+                            lookDir = LookDirection.Foreground;
 
                         var rot = Quaternion.Euler(0f, LeftYRotation + (float)lookDir, 0f);
                         body.rotation = rot;
