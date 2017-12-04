@@ -1615,7 +1615,7 @@ GameObject:
   - component: {fileID: 95023349037904610}
   - component: {fileID: 114283962462310094}
   m_Layer: 0
-  m_Name: Ghost_new
+  m_Name: Ghost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
