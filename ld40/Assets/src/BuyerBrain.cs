@@ -22,7 +22,9 @@ public class BuyerBrain : MonoBehaviour
 		beginTrigger = Animator.StringToHash("Begin");
 		var randIdx = (int)(UnityEngine.Random.value * buyerPrefabs.Count);
         randIdx = Math.Min(randIdx, buyerPrefabs.Count - 1);
-		var childGameObject = GameObject.Instantiate(buyerPrefabs[randIdx], transform.position, Quaternion.identity);
+		var pos = transform.position;
+		pos.y = 0f;
+		var childGameObject = GameObject.Instantiate(buyerPrefabs[randIdx], pos, Quaternion.identity);
         childGameObject.transform.parent = transform;
 		ChildMesh = childGameObject.GetComponent<Animator>();
     }
