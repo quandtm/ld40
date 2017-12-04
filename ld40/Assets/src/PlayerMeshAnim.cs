@@ -52,8 +52,7 @@ public class PlayerMeshAnim : MonoBehaviour
 	{
 		StopWalking();
 		anim.SetTrigger(stairDescendHash);
-		// IsInAnim = true;
-		// TODO: Uncomment when stair descend anim is in place
+		IsInAnim = true;
 	}
 
 	public void ScareFinished()

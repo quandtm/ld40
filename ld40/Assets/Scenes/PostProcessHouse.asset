@@ -72,8 +72,8 @@ MonoBehaviour:
     m_Enabled: 1
     m_Settings:
       focusDistance: 5.09
-      aperture: 4.4
-      focalLength: 65
+      aperture: 3.8
+      focalLength: 62
       useCameraFov: 0
       kernelSize: 1
   motionBlur:
@@ -124,23 +124,23 @@ MonoBehaviour:
         temperature: -2.2
         tint: 0
         hueShift: 0
-        saturation: 1.013
-        contrast: 0.65
+        saturation: 0.941
+        contrast: 0.674
       channelMixer:
         red: {x: 1, y: 0, z: 0}
         green: {x: 0, y: 1, z: 0}
         blue: {x: 0, y: 0, z: 1}
         currentEditingChannel: 0
       colorWheels:
-        mode: 1
+        mode: 0
         log:
           slope: {r: 0.98764515, g: 0.99306285, b: 1, a: 0.0072464338}
           power: {r: 1, g: 0.9963659, b: 0.98546267, a: 0}
           offset: {r: 1, g: 0.9891644, b: 0.9924944, a: 0}
         linear:
-          lift: {r: 0, g: 0, b: 0, a: 0}
-          gamma: {r: 0, g: 0, b: 0, a: 0}
-          gain: {r: 0, g: 0, b: 0, a: 0}
+          lift: {r: 1, g: 1, b: 1, a: 0}
+          gamma: {r: 1, g: 1, b: 1, a: 0}
+          gain: {r: 1, g: 1, b: 1, a: 0}
       curves:
         master:
           curve:
@@ -148,19 +148,19 @@ MonoBehaviour:
             m_Curve:
             - serializedVersion: 2
               time: 0
-              value: 0.02764976
-              inSlope: 0.3000922
-              outSlope: 0.3000922
+              value: 0.016949177
+              inSlope: 1.3029655
+              outSlope: 1.3029655
               tangentMode: 0
             - serializedVersion: 2
-              time: 0.1813063
-              value: 0.16359448
-              inSlope: 0.79847175
-              outSlope: 0.79847175
+              time: 0.3394309
+              value: 0.30932206
+              inSlope: 0.55932206
+              outSlope: 0.55932206
               tangentMode: 0
             - serializedVersion: 2
-              time: 1
-              value: 1
+              time: 0.9186992
+              value: 0.89830506
               inSlope: 1
               outSlope: 1
               tangentMode: 0
