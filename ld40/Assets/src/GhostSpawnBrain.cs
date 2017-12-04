@@ -53,9 +53,23 @@ public class GhostSpawnBrain : MonoBehaviour
     private void HandleNonFloat()
     {
         var animState = anim.GetCurrentAnimatorStateInfo(0);
-        if (animState.shortNameHash == fleeAnimName || animState.shortNameHash == spookAnimName)
+        if (animState.shortNameHash == fleeAnimName)
         {
             IsAnimating = true;
+            if (animState.normalizedTime > 0.5f)
+            {
+                IsAnimating = false;
+                gameObject.SetActive(false);
+            }
+        }
+        else if (animState.shortNameHash == spookAnimName)
+        {
+            IsAnimating = true;
+            if (animState.normalizedTime > 0.5f)
+            {
+                IsAnimating = false;
+                gameObject.SetActive(false);
+            }
         }
         else
         {

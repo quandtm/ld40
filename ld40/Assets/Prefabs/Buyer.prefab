@@ -57,3 +57,5 @@ MonoBehaviour:
   - {fileID: 1654550835975270, guid: 64f58818fe564aa4780a66887dc6ca03, type: 2}
   WasStillPossessed: 0
   ChildMesh: {fileID: 0}
+  ghostPrefab: {fileID: 1660206587257394, guid: 9130ee9e9d4852749b4e069633278d64,
+    type: 2}

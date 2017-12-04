@@ -291,7 +291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82c813eab7aa0fd43b7442f57dcf5748, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BootstrapConfig: {fileID: 11400000, guid: 70f71b6b327a155438a9a2427ef80993, type: 2}
+  BootstrapConfig: {fileID: 11400000, guid: b6d3bc44c1bc4844ca32b4eb9103814b, type: 2}
   GhostSpawnLocation: {fileID: 939291831}
   GhostPrefab: {fileID: 1660206587257394, guid: 9130ee9e9d4852749b4e069633278d64,
     type: 2}

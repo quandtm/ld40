@@ -34,7 +34,6 @@ public class PlayerMeshAnim : MonoBehaviour
 		ghost.transform.parent = transform;
 		ghost.transform.localPosition = new Vector3(0, .25f, 1);
 		ghost.transform.localRotation = Quaternion.Euler(0, 165, 0);
-
 		ghost.SetActive(false);
 	}
     public void SetSpeed(float speed)

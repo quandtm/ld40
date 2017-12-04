@@ -70,7 +70,10 @@ public class Hauntable : MonoBehaviour
 				var go = GameObject.Instantiate(prefab, Vector3.zero, Quaternion.identity);
 				var xform = go.transform;
 				xform.parent = gameObject.transform;
-				xform.localPosition = boxCenter;
+				var lp = boxCenter;
+				lp.y = -(GetComponent<BoxCollider>().size.y / 2f);
+				xform.localPosition = lp;
+				Debug.Log(xform.localPosition);
 				var brain = go.GetComponent<BuyerBrain>();
 				brain.WasStillPossessed = isPossessed;
 			}
