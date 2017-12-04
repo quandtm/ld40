@@ -66,10 +66,9 @@ public class PlayerBrain : MonoBehaviour
                         {
                             // TODO: Animation based on IsPossessed state BEFORE change
                             if (proxHaunts[1].IsPossessed)
-                            {
                                 curExorcising = proxHaunts[1];
-                                shouldAnim = true;
-                            }
+                            proxHaunts[1].PreviouslyInteracted = true;
+                            shouldAnim = true;
                         }
                     }
                     else if (lookDir == LookDirection.Foreground)
@@ -78,10 +77,9 @@ public class PlayerBrain : MonoBehaviour
                         {
                             // TODO: Animation based on IsPossessed state BEFORE change
                             if (proxHaunts[0].IsPossessed)
-                            {
                                 curExorcising = proxHaunts[0];
-                                shouldAnim = true;
-                            }
+                            proxHaunts[0].PreviouslyInteracted = true;
+                            shouldAnim = true;
                         }
                     }
 
