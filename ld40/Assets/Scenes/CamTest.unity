@@ -1543,23 +1543,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c212c6b5e743ad041a509a7768f1b35f, type: 3}
       propertyPath: m_LocalPosition.y
-<<<<<<< HEAD
       value: 0
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-      value: 4.198
-=======
-      value: 0
->>>>>>> bd2146e82dda4761958d9b37cf8e2ca60d8645d2
-=======
-      value: 5.198
->>>>>>> parent of 0171f52... added Bathroom
-=======
-      value: 4.198
->>>>>>> parent of 96cf9c7... Merge branch 'master' of https://github.com/quandtm/ld40
->>>>>>> c676f62b20cfeb0a7bb007a223ed585de41ca325
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c212c6b5e743ad041a509a7768f1b35f, type: 3}
       propertyPath: m_LocalPosition.z
