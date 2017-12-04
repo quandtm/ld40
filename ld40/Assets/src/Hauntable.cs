@@ -19,6 +19,8 @@ public class Hauntable : MonoBehaviour
                 isPossessed = value;
                 if (isPossessed == false)
                     GameDirector.Instance.ReportGhostEliminated();
+                else
+                    wasEverPossessed = true;
             }
         }
     }
@@ -28,6 +30,7 @@ public class Hauntable : MonoBehaviour
 	private int shakeAnimHash;
 	private Animator anim;
 	private bool registered = false;
+	private bool wasEverPossessed;
 
 	void Start()
 	{
@@ -58,7 +61,7 @@ public class Hauntable : MonoBehaviour
 
 	private void OnPhaseChange()
 	{
-		if (GameDirector.Instance.CurrentPhase == Phase.Buy)
+		if (GameDirector.Instance.CurrentPhase == Phase.Buy && wasEverPossessed)
 		{
 			var boxCenter = GetComponent<BoxCollider>().center;
 			var prefab = GameDirector.Instance.BuyerPrefab;

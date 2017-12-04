@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 83035531}
   - component: {fileID: 83035530}
   m_Layer: 5
-  m_Name: Image (2)
+  m_Name: version
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1285,7 +1285,7 @@ GameObject:
   - component: {fileID: 2082845005}
   - component: {fileID: 2082845004}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: selectdifficulty
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
