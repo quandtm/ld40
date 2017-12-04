@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: c212c6b5e743ad041a509a7768f1b35f
-timeCreated: 1512267618
+guid: bb1a07fd9da2b0f498476c4a489ad1b8
+timeCreated: 1512351402
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -9,29 +9,13 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Bathroom1
-    9500000: //RootNode
+    4300000: dresser
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: CeilingMatt
-    second: {fileID: 2100000, guid: e3e060000785531459c7deddb90016b1, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: FloorMat
-    second: {fileID: 2100000, guid: 1ccb9bb5c3b4631438d2ccd6e58d3091, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: TrimMatt
-    second: {fileID: 2100000, guid: a352f8d5a25590c41993fc132ccf0fbe, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: WallMat
-    second: {fileID: 2100000, guid: 3deec94645d24684ebb4a2dfc142bd00, type: 2}
+      name: mat_dresser
+    second: {fileID: 2100000, guid: d234f5f5521ab014381f2b2bdea68e30, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -103,7 +87,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
