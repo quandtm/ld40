@@ -64,6 +64,9 @@ public class GameDirectorImpl
 
     private int numBuyAnimating = 0;
 
+    public AudioSource asrc;
+    public AudioClip hauntClip;
+
     private void BeginTransition()
     {
         transitionProgress = 0f;
@@ -271,8 +274,9 @@ public class GameDirectorImpl
             brain.Speed = (dest - spawnPos).magnitude / HauntDuration;
         }
 
-        // TODO: Turn off lights for certain duration so ghosts can fly to objects, then kill ghosts and re-enable lights
         hauntTimeRemaining = HauntDuration;
+
+        asrc.PlayOneShot(hauntClip);
     }
 }
 
@@ -282,6 +286,8 @@ public class GameDirector : MonoBehaviour
     public Transform GhostSpawnLocation;
     public GameObject GhostPrefab; 
     public GameObject BuyerPrefab;
+
+    public AudioClip hauntClip;
 
     private static GameDirectorImpl inst;
     public static GameDirectorImpl Instance
@@ -305,6 +311,8 @@ public class GameDirector : MonoBehaviour
         inst.GhostSpawnLocation = GhostSpawnLocation.position;
         inst.GhostPrefab = GhostPrefab;
         inst.BuyerPrefab = BuyerPrefab;
+        inst.asrc = GetComponent<AudioSource>();
+        inst.hauntClip = hauntClip;
     }
 
     void Update()

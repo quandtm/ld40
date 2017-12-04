@@ -20,10 +20,13 @@ public class GhostSpawnBrain : MonoBehaviour
     private int spookAnimTrig;
     private int fleeAnimName;
     private int spookAnimName;
+    private AudioSource asrc;
+    public AudioClip scaredAwayClip;
 
     void Start()
     {
         GameDirector.Instance.PhaseChangeEvent += OnPhaseChange;
+        asrc = GetComponent<AudioSource>();
     }
 
     void OnDestroy()
@@ -85,6 +88,7 @@ public class GhostSpawnBrain : MonoBehaviour
     {
         CheckAnim();
         anim.SetTrigger(fleeAnimTrig);
+        asrc.PlayOneShot(scaredAwayClip);
     }
 
     public void PlaySpook()

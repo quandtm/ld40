@@ -12,6 +12,7 @@ enum LookDirection
 }
 
 [RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(AudioSource))]
 public class PlayerBrain : MonoBehaviour
 {
     public float Speed = 1f;
@@ -31,9 +32,13 @@ public class PlayerBrain : MonoBehaviour
     public PlayerMeshAnim childMesh;
     private Hauntable curExorcising = null;
 
+    private AudioSource asrc;
+    public AudioClip scareGhostClip;
+
     void Start()
     {
         body = GetComponent<Rigidbody>();
+        asrc = GetComponent<AudioSource>();
         childMesh.DoFloorChange += new Action(HandleFloorChange);
     }
 
@@ -90,7 +95,10 @@ public class PlayerBrain : MonoBehaviour
                     }
 
                     if (shouldAnim)
+                    {
                         childMesh.PlayScare();
+                        asrc.PlayOneShot(scareGhostClip);
+                    }
 
                     if (hasGhost)
                         childMesh.ShowScaredGhost();

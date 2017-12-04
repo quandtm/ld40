@@ -14,8 +14,6 @@ public class BuyerBrain : MonoBehaviour
     private int isScaredFlag;
     private int beginTrigger;
 
-    private float tmpAnimTimer = 3f;
-
     public GameObject ghostPrefab;
     private GameObject ghost;
     private GhostSpawnBrain ghostBrain;

@@ -1614,6 +1614,7 @@ GameObject:
   - component: {fileID: 4791129846142028}
   - component: {fileID: 95023349037904610}
   - component: {fileID: 114283962462310094}
+  - component: {fileID: 82756006989303412}
   m_Layer: 0
   m_Name: Ghost
   m_TagString: Untagged
@@ -4656,6 +4657,86 @@ Transform:
   m_Father: {fileID: 4080707578733368}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &82756006989303412
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1660206587257394}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &95023349037904610
 Animator:
   serializedVersion: 3
@@ -4684,8 +4765,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10b30eb665f9ae64683c2bc4c1a185c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
   Destination: {x: 0, y: 0, z: 0}
   Speed: 0
+  IsAnimating: 0
+  scaredAwayClip: {fileID: 8300000, guid: 09d2743c80de9884c82bdc0522b37262, type: 3}
 --- !u!137 &137038807555530492
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
