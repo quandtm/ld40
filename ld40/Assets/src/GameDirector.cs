@@ -132,6 +132,12 @@ public class GameDirectorImpl
 
     public void Update()
     {
+        if (Input.GetButtonUp("Cancel"))
+        {
+            SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
+            return;
+        }
+
         if (IsTransitioning)
         {
             transitionProgress += Time.deltaTime / TransitionDuration;
