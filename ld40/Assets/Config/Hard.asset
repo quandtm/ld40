@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Hard
   m_EditorClassIdentifier: 
   NumGhosts: 7
-  TimeLimit: 45
+  TimeLimit: 80
   SecondsBetweenHints: 0
   LastChanceHintTime: 0
   EnableHints: 0
