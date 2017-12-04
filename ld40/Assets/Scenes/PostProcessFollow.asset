@@ -124,13 +124,13 @@ MonoBehaviour:
         temperature: -1.4
         tint: 0
         hueShift: 0
-        saturation: 1.093
-        contrast: 0.562
+        saturation: 1.309
+        contrast: 0.626
       channelMixer:
-        red: {x: 0.87, y: 0, z: 0}
+        red: {x: 0.74, y: 0.21, z: 0}
         green: {x: 0, y: 0.94, z: 0}
         blue: {x: 0, y: 0, z: 1}
-        currentEditingChannel: 1
+        currentEditingChannel: 0
       colorWheels:
         mode: 0
         log:
@@ -138,9 +138,9 @@ MonoBehaviour:
           power: {r: 1, g: 0.9963659, b: 0.98546267, a: 0.20869565}
           offset: {r: 1, g: 0.9891644, b: 0.9924944, a: 0}
         linear:
-          lift: {r: 1, g: 1, b: 1, a: 0}
-          gamma: {r: 0.8960378, g: 1, b: 0.8227639, a: -0.052173913}
-          gain: {r: 1, g: 0.95156527, b: 0.95668316, a: 0}
+          lift: {r: 0.92511755, g: 1, b: 0.8502353, a: -0.034782607}
+          gamma: {r: 0.9881923, g: 0.9135884, b: 1, a: -0.069565214}
+          gain: {r: 1, g: 0.7432051, b: 0.895897, a: -0.0000000036928964}
       curves:
         master:
           curve:
@@ -159,8 +159,8 @@ MonoBehaviour:
               outSlope: 0.3523276
               tangentMode: 0
             - serializedVersion: 2
-              time: 0.800813
-              value: 0.6864407
+              time: 0.72357726
+              value: 0.62711865
               inSlope: 1.1432475
               outSlope: 1.1432475
               tangentMode: 0
@@ -296,7 +296,7 @@ MonoBehaviour:
     m_Enabled: 1
     m_Settings:
       spectralTexture: {fileID: 0}
-      intensity: 0.116
+      intensity: 0.186
   grain:
     m_Enabled: 0
     m_Settings:
@@ -321,7 +321,7 @@ MonoBehaviour:
   monitors:
     currentMonitorID: 0
     refreshOnPlay: 1
-    histogramMode: 3
+    histogramMode: 4
     waveformExposure: 0.05
     waveformY: 0
     waveformR: 1
