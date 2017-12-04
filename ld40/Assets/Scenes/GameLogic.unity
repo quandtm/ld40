@@ -293,7 +293,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BootstrapConfig: {fileID: 11400000, guid: 432252576f8f9fa488d6e11b0a3fa1c5, type: 2}
   GhostSpawnLocation: {fileID: 939291831}
-  GhostPrefab: {fileID: 1660206587257394, guid: 9130ee9e9d4852749b4e069633278d64,
+  GhostPrefab: {fileID: 1262810779918576, guid: 2edcc3f0b4b0aff41b2190e21b0e7017,
     type: 2}
   BuyerPrefab: {fileID: 1360603707846512, guid: 481883cf640cb5f4dbee3eedc9857327,
     type: 2}
