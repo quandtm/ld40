@@ -291,11 +291,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82c813eab7aa0fd43b7442f57dcf5748, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BootstrapConfig: {fileID: 11400000, guid: 432252576f8f9fa488d6e11b0a3fa1c5, type: 2}
+  BootstrapConfig: {fileID: 11400000, guid: 82a486c871be7a3408bb165e69039b3c, type: 2}
   GhostSpawnLocation: {fileID: 939291831}
   GhostPrefab: {fileID: 1660206587257394, guid: 9130ee9e9d4852749b4e069633278d64,
     type: 2}
-  BuyerPrefab: {fileID: 1360603707846512, guid: 481883cf640cb5f4dbee3eedc9857327,
+  BuyerPrefab: {fileID: 1374408243805314, guid: a193e8aa8f9b3b3429495a10e9ca41e1,
     type: 2}
 --- !u!1 &968995886
 GameObject:

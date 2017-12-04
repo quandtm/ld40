@@ -1,9 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class BuyerBrain : MonoBehaviour
 {
+	public List<GameObject> buyerPrefabs;
+
 	public bool WasStillPossessed;
     public Animator ChildMesh;
     private bool hasAnimated = false;
@@ -17,8 +20,11 @@ public class BuyerBrain : MonoBehaviour
     {
 		isScaredFlag = Animator.StringToHash("IsScared");
 		beginTrigger = Animator.StringToHash("Begin");
-		if (ChildMesh == null)
-			Debug.LogError("Animator wasn't bound to BuyerBrain, check prefab!");
+		var randIdx = (int)(UnityEngine.Random.value * buyerPrefabs.Count);
+        randIdx = Math.Min(randIdx, buyerPrefabs.Count - 1);
+		var childGameObject = GameObject.Instantiate(buyerPrefabs[randIdx], transform.position, Quaternion.identity);
+        childGameObject.transform.parent = transform;
+		// ChildMesh = 
     }
 
     void Update()
